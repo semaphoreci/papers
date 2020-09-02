@@ -20,15 +20,15 @@ latest version of source text. See [project on Semaphore][semaphore-project].
 Any images should be relative to this folder.
 2. Append the contents of `footer.md` to the markdown file:
 
-    cat footer.md >> papers/MY-AWESOME-PAPER.md
+        cat footer.md >> papers/MY-AWESOME-PAPER.md
 
 3. Edit the markdown file. Fill in publication values in the footer (YOUR ORIGINAL PUB URL, etc). You may need to add a title at the beginning. Check everything looks OK:
 
-    $EDITOR papers/MY-AWESOME-PAPER.md
+        $EDITOR papers/MY-AWESOME-PAPER.md
 
 3. Edit `Makefile` and add the new filename *without the extension or path* to the list in `PAPERS`:
 
-    PAPERS = paper-1 paper-2 ... MY-AWESOME-PAPER
+        PAPERS = paper-1 paper-2 ... MY-AWESOME-PAPER
 
 4. Build all the PDFs: `make pdf`
 5. Output PDF is in: `build/pdf/MY-AWESOME-PAPER.pdf`
