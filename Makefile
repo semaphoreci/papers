@@ -11,7 +11,7 @@ export REVISION = $(shell git rev-parse --short HEAD)
 .PHONY: clean pdf
 
 clean:
-	rm -rf $(BUILDDIR)
+	rm -r $(BUILDDIR)
 
 # `make pdf` target for all PDFs generated in $(PAPERS)
 pdf: $(addprefix build/pdf/,$(addsuffix .pdf,$(PAPERS)))
