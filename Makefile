@@ -1,4 +1,5 @@
-# list of papers to build (without extension)
+# Add your markdown sources here
+# (do not include path or file extension)
 PAPERS = what-is-blue-green-deployment
 
 PAPERDIR = papers
