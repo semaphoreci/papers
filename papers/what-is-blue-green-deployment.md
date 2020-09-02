@@ -1,4 +1,3 @@
-
 # What Is Blue-Green Deployment?
 
 *Practiced by the likes of Amazon for more than a decade, blue-green is a proven and safe method for continuous software deployment.*
@@ -155,3 +154,28 @@ Learn about more ways of deploying software with these posts:
   - [What’s the Difference Between Continuous Integration, Continuous Deployment, and Continuous Delivery?](https://semaphoreci.com/blog/2017/07/27/what-is-the-difference-between-continuous-integration-continuous-deployment-and-continuous-delivery.html)
 
 Thanks for reading\!
+
+\newpage
+
+© __BUILD_YEAR__ Rendered Text. All rights reserved.
+
+This work is licensed under Creative Commmons
+Attribution-NonCommercial-NoDerivatives 4.0 International.
+To view a copy of this license, visit
+<https://creativecommons.org/licenses/by-nc-nd/4.0>
+
+The source text is open source:
+<https://github.com/semaphoreci/papers>
+
+Originally published at:
+<https://semaphoreci.com/blog/blue-green-deployment>
+
+Original publication date: 5 Aug 2020
+
+Authors: Tomas Fernandez
+
+Build date: __BUILD_MONTH__ __BUILD_YEAR__
+
+Revision: __BUILD_REVISION__
+
+\newpage
