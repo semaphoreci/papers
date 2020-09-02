@@ -1,6 +1,7 @@
 # Add your markdown sources here
 # (do not include path or file extension)
-PAPERS = what-is-blue-green-deployment cicd-pipeline-a-gentle-introduction
+PAPERS = what-is-blue-green-deployment cicd-pipeline-a-gentle-introduction \
+		 cicd-continuous-integration-and-delivery-explained
 
 PAPERDIR = papers
 BUILDDIR = build
