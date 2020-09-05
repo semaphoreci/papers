@@ -26,11 +26,10 @@ $(BUILDDIR)/md/%.md: $(PAPERDIR)/%.md
 $(BUILDDIR)/pdf/%.pdf: $(BUILDDIR)/md/%.md
 	mkdir -p $(BUILDDIR)/pdf
 	docker run --rm --volume `pwd`:/data -w /data pandoc/latex:2.10 \
+		--pdf-engine=xelatex \
         -f markdown-implicit_figures \
 		-d latex-options.yml \
 		-H make-code-small.tex \
 		--resource-path=$(PAPERDIR) \
 		-o /data/$@ $^
 
-# -V geometry:"left=0.9in, right=0.9in, top=1in, bottom=1.2in" \
-# -V fontfamily=times \
