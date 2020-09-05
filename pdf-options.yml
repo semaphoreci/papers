@@ -1,0 +1,27 @@
+# options for latex processor
+
+variables:
+  # page options
+  pagestyle: headings
+  geometry:
+  - top=1in
+  - left=0.9in
+  - right=0.9in
+  - bottom=1in
+  - heightrounded
+
+  # link handling
+  colorlinks: true
+  # links-as-notes: true
+  
+  # font settings
+  # source: https://tex.stackexchange.com/questions/234786/how-to-set-a-font-family-with-pandoc
+  fontsize: 12pt
+  mainfont: OpenSans
+  mainfontoptions:
+  - Path=fonts/OpenSans/
+  - Extension=.ttf
+  - UprightFont=*-Regular
+  - BoldFont=*-Bold
+  - ItalicFont=*-Italic
+  - BoldItalicFont=*-BoldItalic
