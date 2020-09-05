@@ -1,7 +1,9 @@
 # options for latex processor
+#
+
 
 variables:
-  # page options
+  # Page options
   pagestyle: headings
   geometry:
   - top=1in
@@ -10,11 +12,20 @@ variables:
   - bottom=1in
   - heightrounded
 
-  # link handling
+
+  # Customize header & footer
+  # Source: https://tex.stackexchange.com/questions/139139/adding-headers-and-footers-using-pandoc
+  header-includes: |
+      \usepackage{fancyhdr}
+      \pagestyle{fancy}
+      \fancyfoot[CO,CE]{Published by Semaphore: CI/CD for teams that don’t like bottlenecks semaphoreci.com}
+      \fancyfoot[LE,RO]{\thepage}
+
+  # Link handling
   colorlinks: true
   # links-as-notes: true
   
-  # font settings
+  # Font settings
   # source: https://tex.stackexchange.com/questions/234786/how-to-set-a-font-family-with-pandoc
   fontsize: 12pt
   mainfont: OpenSans
