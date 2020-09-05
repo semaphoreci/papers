@@ -1,7 +1,7 @@
 # Add your markdown sources here
 # (do not include path or file extension)
-PAPERS = what-is-blue-green-deployment #cicd-pipeline-a-gentle-introduction \
-		 #cicd-continuous-integration-and-delivery-explained
+PAPERS = what-is-blue-green-deployment cicd-pipeline-a-gentle-introduction \
+		 cicd-continuous-integration-and-delivery-explained
 
 PAPERDIR = papers
 BUILDDIR = build
@@ -28,7 +28,7 @@ $(BUILDDIR)/pdf/%.pdf: $(BUILDDIR)/md/%.md
 	docker run --rm --volume `pwd`:/data -w /data pandoc/latex:2.10 \
 		--pdf-engine=xelatex \
         -f markdown-implicit_figures \
-		-d latex-options.yml \
+		-d pdf-options.yml \
 		-H make-code-small.tex \
 		--resource-path=$(PAPERDIR) \
 		-o /data/$@ $^
