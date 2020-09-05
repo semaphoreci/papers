@@ -14,13 +14,22 @@ variables:
 
 
   # Customize header & footer
-  # Source: https://tex.stackexchange.com/questions/139139/adding-headers-and-footers-using-pandoc
+  # Sources: 
+  # https://tex.stackexchange.com/questions/139139/adding-headers-and-footers-using-pandoc
+  # https://texblog.org/2012/10/09/changing-the-font-size-in-fancyhdr/
   header-includes: |
       \usepackage{fancyhdr}
       \pagestyle{fancy}
-      \fancyfoot[CO,CE]{Published by Semaphore: CI/CD for teams that don’t like bottlenecks semaphoreci.com}
-      \fancyfoot[LE,RO]{\thepage}
+      \newcommand{\changefont}{%
+          \fontsize{9}{11}\selectfont
+      }
+      \fancyhf{}
+      \fancyhead[LE,RO]{\changefont \slshape \rightmark} %section
+      \fancyhead[RE,LO]{\changefont \slshape \leftmark} %chapter
+      \fancyfoot[CO,CE]{\changefont Published by Semaphore: CI/CD for teams that don’t like bottlenecks - semaphoreci.com}
+      \fancyfoot[LE,RO]{\changefont \thepage}
 
+      
   # Link handling
   colorlinks: true
   # links-as-notes: true
