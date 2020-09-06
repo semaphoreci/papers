@@ -14,8 +14,6 @@ variables:
 
 
   header-includes: |
-
-
       % Customize header & footer
       % Sources: 
       % https://tex.stackexchange.com/questions/139139/adding-headers-and-footers-using-pandoc
@@ -31,7 +29,6 @@ variables:
       \fancyfoot[CO,CE]{\changefont Published by Semaphore: CI/CD for teams that don’t like bottlenecks - semaphoreci.com}
       \fancyfoot[LE,RO]{\changefont \thepage}
 
-
       % Don't let figures float
       % Source: https://stackoverflow.com/questions/49482221/pandoc-markdown-to-pdf-image-position
       \usepackage{float}
@@ -43,6 +40,20 @@ variables:
           \endorigfigure
       }
 
+      % Handle documents without code fenced
+      % the next hack in this file breaks the build if there aren't any code fences in the document
+      % this creates an empty environment so the build always works
+      % Source: https://tex.stackexchange.com/questions/41496/how-to-define-an-environment-only-if-it-is-not-defined-yet-using-etoolbox
+      \ifcsmacro{Shaded}{}{
+        \let\endmyenvironment\undefined%
+        \newenvironment{Shaded}{End.}
+      }
+
+      % Hack to decrease font size in code blocks
+      % Options for font size:
+      % huge, LARGE,  Large, large, normalsize, small, footnotesize, scriptsize, tiny
+      % Source: https://stackoverflow.com/questions/27000906/how-to-set-the-font-size-for-code-blocks-in-pandoc-markdown#comment78049604_27159300
+      \renewenvironment{Shaded} {\footnotesize} {}
       
   # Link handling
   colorlinks: true

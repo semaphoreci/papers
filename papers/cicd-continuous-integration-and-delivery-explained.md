@@ -36,9 +36,7 @@ To make CI/CD a reality, you need to automate everything that you can in the sof
 
 Here’s a simple example of fully automated CI/CD (Continuous Deployment) pipeline:
 
-![a simple ci/cd workflow example](./public/cicd-continuous-integration-and-delivery-explained/cicd-simple-1024x241.png){ width=85% }
-
-CI/CD shouldn’t be more complicated than necessary
+![CI/CD shouldn’t be more complicated than necessary](./public/cicd-continuous-integration-and-delivery-explained/cicd-simple-1024x241.png){ width=85% }
 
 Each change on the master Git branch performs the following steps on Semaphore:
 
@@ -50,9 +48,7 @@ Each change on the master Git branch performs the following steps on Semaphore:
 
 Here’s a CI/CD workflow for Kubernetes which includes more steps:
 
-![ci/cd workflow example with manual steps](./public/cicd-continuous-integration-and-delivery-explained/cicd-containers-1024x225.png){ width=95% }
-
-Multi-stage CI/CD with Docker and Kubernetes, with manual steps to strategically deploy to staging or production environments (click to view full size)
+![Multi-stage CI/CD with Docker and Kubernetes, with manual steps to strategically deploy to staging or production environments ](./public/cicd-continuous-integration-and-delivery-explained/cicd-containers-1024x225.png){ width=95% }
 
 In this example, each change _automatically_ performs these steps:
 

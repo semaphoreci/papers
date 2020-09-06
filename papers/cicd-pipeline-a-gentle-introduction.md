@@ -24,9 +24,7 @@ A CI/CD pipeline may sound like overhead, but it isn’t. It’s essentially a r
 
 Most software releases go through a couple of typical stages:
 
-![CI/CD pipeline stages](./public/cicd-pipeline-a-gentle-introduction/cicd-pipeline-introduction-1024x422.png){ width=80% }
-
-Stages of a CI/CD pipeline
+![Stages of a CI/CD pipeline](./public/cicd-pipeline-a-gentle-introduction/cicd-pipeline-introduction-1024x422.png){ width=80% }
 
 Failure in each stage typically triggers a notification—via email, Slack, etc.—to let the responsible developers know about the cause. Otherwise, the whole team receives a notification after each successful deployment to production.
 
@@ -62,9 +60,7 @@ Teams that have embraced the Agile model of development—guided by tests and re
 
 A pipeline can start very simple. Here’s [an example of a Go project pipeline](https://github.com/semaphoreci-demos/semaphore-demo-go) that compiles the code, checks code style and runs automated tests in two parallel jobs:
 
-![Golang CI pipeline with Semaphore](./public/cicd-pipeline-a-gentle-introduction/golang-ci-pipeline-1024x316.png){ width=80% }
-
-A simple CI pipeline for a Go project
+![A simple CI pipeline for a Go project](./public/cicd-pipeline-a-gentle-introduction/golang-ci-pipeline-1024x316.png){ width=80% }
 
 Here’s a more complex example of a pipeline that [builds, tests and deploys a microservice to a Kubernetes cluster](https://semaphoreci.com/blog/cicd-microservices-digitalocean-kubernetes):
 
