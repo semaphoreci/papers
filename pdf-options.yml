@@ -13,11 +13,13 @@ variables:
   - heightrounded
 
 
-  # Customize header & footer
-  # Sources: 
-  # https://tex.stackexchange.com/questions/139139/adding-headers-and-footers-using-pandoc
-  # https://texblog.org/2012/10/09/changing-the-font-size-in-fancyhdr/
   header-includes: |
+
+
+      % Customize header & footer
+      % Sources: 
+      % https://tex.stackexchange.com/questions/139139/adding-headers-and-footers-using-pandoc
+      % https://texblog.org/2012/10/09/changing-the-font-size-in-fancyhdr/
       \usepackage{fancyhdr}
       \pagestyle{fancy}
       \newcommand{\changefont}{%
@@ -28,6 +30,18 @@ variables:
       \fancyhead[RE,LO]{\changefont \slshape \leftmark} %chapter
       \fancyfoot[CO,CE]{\changefont Published by Semaphore: CI/CD for teams that don’t like bottlenecks - semaphoreci.com}
       \fancyfoot[LE,RO]{\changefont \thepage}
+
+
+      % Don't let figures float
+      % Source: https://stackoverflow.com/questions/49482221/pandoc-markdown-to-pdf-image-position
+      \usepackage{float}
+      \let\origfigure\figure
+      \let\endorigfigure\endfigure
+      \renewenvironment{figure}[1][2] {
+          \expandafter\origfigure\expandafter[H]
+      } {
+          \endorigfigure
+      }
 
       
   # Link handling
