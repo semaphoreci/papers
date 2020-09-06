@@ -30,13 +30,13 @@ Continuous Delivery practices take CI further by describing principles for succe
 
 To make CI/CD a reality, you need to automate everything that you can in the software delivery process and run it in a [CI/CD pipeline](https://semaphoreci.com/blog/cicd-pipeline).
 
-![ci/cd process](./public/cicd-continuous-integration-and-delivery-explained/ci-cd-693x1024.png)
+![ci/cd process](./public/cicd-continuous-integration-and-delivery-explained/ci-cd-693x1024.png){ width=65% }
 
 ## Example CI/CD workflows
 
 Here’s a simple example of fully automated CI/CD (Continuous Deployment) pipeline:
 
-![a simple ci/cd workflow example](./public/cicd-continuous-integration-and-delivery-explained/cicd-simple-1024x241.png)
+![a simple ci/cd workflow example](./public/cicd-continuous-integration-and-delivery-explained/cicd-simple-1024x241.png){ width=85% }
 
 CI/CD shouldn’t be more complicated than necessary
 
@@ -50,7 +50,7 @@ Each change on the master Git branch performs the following steps on Semaphore:
 
 Here’s a CI/CD workflow for Kubernetes which includes more steps:
 
-![ci/cd workflow example with manual steps](./public/cicd-continuous-integration-and-delivery-explained/cicd-containers-1024x225.png)
+![ci/cd workflow example with manual steps](./public/cicd-continuous-integration-and-delivery-explained/cicd-containers-1024x225.png){ width=95% }
 
 Multi-stage CI/CD with Docker and Kubernetes, with manual steps to strategically deploy to staging or production environments (click to view full size)
 
@@ -72,9 +72,9 @@ CI/CD is much more than the automation of tasks to avoid human error. It lets us
 As [Dave Farley](http://www.davefarley.net/), co-author of _[Continuous Delivery](https://www.amazon.com/dp/0321601912)_ book and a software engineering expert points out in [a podcast hosted by Semaphore](https://semaphoreci.com/blog/continuous-delivery-dave-farley):
 
 > The trillion-dollar mistake is miscategorizing software development as a production problem, in the sense of being able to scale it up in order to be able to produce things more reliably.
-> 
+>
 > Software development is always an exercise in learning, discovery and experimentation. \[…\] If you read the [Accelerate book](https://www.amazon.com/dp/1942788339), [State of DevOps report](https://puppet.com/resources/report/state-of-devops-report/), the numbers tell us that organizations that practice continuous delivery produce higher-quality software more quickly. The people working on it enjoy it more and the organizations that practice it make more money.
-> 
+>
 > [Dave Farley on Semaphore Uncut podcast](https://semaphoreci.com/blog/continuous-delivery-dave-farley)
 
 If your company practices CI/CD, it will have a competitive advantage which enables you to:

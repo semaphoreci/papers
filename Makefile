@@ -9,13 +9,13 @@ export YEAR = $(shell date +'%Y')
 export MONTH = $(shell date +'%b')
 export REVISION = $(shell git rev-parse --short HEAD)
 
-.PHONY: clean pdf
-
-clean:
-	rm -rf $(BUILDDIR)
+.PHONY: pdf clean
 
 # `make pdf` target for all PDFs generated in $(PAPERS)
 pdf: $(addprefix build/pdf/,$(addsuffix .pdf,$(PAPERS)))
+
+clean:
+	rm -rf $(BUILDDIR)
 
 # builds intermediate markdown file with __BUILD_* variables interpolated
 $(BUILDDIR)/md/%.md: $(PAPERDIR)/%.md
@@ -27,7 +27,7 @@ $(BUILDDIR)/pdf/%.pdf: $(BUILDDIR)/md/%.md
 	mkdir -p $(BUILDDIR)/pdf
 	docker run --rm --volume `pwd`:/data -w /data pandoc/latex:2.10 \
 		--pdf-engine=xelatex \
-        -f markdown-implicit_figures \
+        -f markdown \
 		-d pdf-options.yml \
 		-H make-code-small.tex \
 		--resource-path=$(PAPERDIR) \

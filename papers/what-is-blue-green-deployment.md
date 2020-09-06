@@ -22,7 +22,7 @@ Now I know what you’re thinking. Isn’t testing in production a big no-no? No
 
 The deployment worked like this. They copied the folder containing the latest version into the production machine. Then they started the website using a separate domain and smoke-tested it right there. Once they were happy, they would point the Apache web server to the new folder, call it a day, and presumably have a round of beers. If anything went south, they could point the web server back to the old folder, fix the errors, and try again. This strategy greatly improved error detection because test and production environments were now the same.
 
-![Blue-Green Deployment](./public/what-is-blue-green-deployment/folders-1024x298.jpg)
+![Blue-Green Deployment](./public/what-is-blue-green-deployment/folders.png){ width=95% }
 
 At this point, they had two environments on the same machine: one for the old version and another for the new. Initially, they wanted to call them by letters: _environment A_, _environment B_, and so on. But someone pointed out that people would tend to believe that A is somehow better than B (maybe it sounded too much like “plan B”). They finally settled on using colors instead, which didn’t have a natural order. Thus, they planned names like _blue_, _green_, or _orange_ (they avoided _red_ because it implied danger). In the end, it turned out they only needed two environments. And so the term blue-green was coined.
 
@@ -38,31 +38,31 @@ The basis of the blue-green method is side-by-side deployments. For that, we nee
 
 In its purest form, blue-green asks us to duplicate every resource our application depends on.
 
-![Blue-Green Deployment](./public/what-is-blue-green-deployment/bg1.jpg)
+![Blue-Green Deployment](./public/what-is-blue-green-deployment/bg1.png){ width=35% }
 
 Two independent production environments
 
 In practice, however, it doesn’t always make sense to run a spare copy of everything. Keeping two databases in sync, for instance, is notably hard. For that reason, we frequently find blue-green deployments with shared components.
 
-![Blue Environment](./public/what-is-blue-green-deployment/bg2.jpg)
+![Blue Environment](./public/what-is-blue-green-deployment/bg2.png){ width=50% }
 
 Two production environments with some shared components
 
 We also need some way of switching incoming connections between the two environments. We’ll represent this with a router symbol. It can be an actual router, a load balancer, a reverse proxy, or, like in the original case, a web server.
 
-![Production Environment](./public/what-is-blue-green-deployment/bg3-1-1024x559.jpg)
+![Production Environment](./public/what-is-blue-green-deployment/bg3.png){ width=70% }
 
 The router switches traffic to one production environment at a time
 
 Blue and green take turns to play the role of production. Only one of the environments is live at any given time. Say, for instance, that blue is active. In that case, it receives all the traffic—meanwhile, green acts as a staging area, where we can deploy and test the next version.
 
-![Blue-Green Deployment](./public/what-is-blue-green-deployment/bg3a-1-1024x651.jpg)
+![Blue-Green Deployment](./public/what-is-blue-green-deployment/bg3a.png){ width=70% }
 
 Users continue accessing v1 on blue while the new v2 release is deployed on green.
 
 Once we make sure the version running in green is working well, we’ll switch the route. Then the cycle begins again.
 
-![Blue-Green Deployment](./public/what-is-blue-green-deployment/bg3b-1-1024x641.jpg)
+![Blue-Green Deployment](./public/what-is-blue-green-deployment/bg3b.png){ width=70% }
 
 Deployment is complete once users are switched to the new version running on green
 
@@ -72,25 +72,25 @@ Keeping two sets of environments up all the time can get expensive. Fortunately,
 
 The cloud abstracts most of the infrastructure away. We can picture deployments as a series of loosely coupled components.
 
-![Blue-Green Deployment](./public/what-is-blue-green-deployment/bg4a-1024x409.jpg)
+![Blue-Green Deployment](./public/what-is-blue-green-deployment/bg4a.png){ width=70% }
 
 Blue production environment in the cloud
 
 When it’s time for a new release, we create new resources without touching the live environment. In practice, we’ll use a [CI/CD](https://semaphoreci.com/cicd) tool like [Semaphore](https://semaphoreci.com/) to create identical new components and make the deployment.
 
-![Green production environment](./public/what-is-blue-green-deployment/bg4b-1-1024x997.jpg)
+![Green production environment](./public/what-is-blue-green-deployment/bg4b.png){ width=70% }
 
 Green production environment is created on demand
 
 We then re-route all user connections at once.
 
-![Blue-Green Deployment](./public/what-is-blue-green-deployment/bg4c-1024x696.jpg)
+![Blue-Green Deployment](./public/what-is-blue-green-deployment/bg4c.png){ width=70% }
 
 User traffic is cut-over to the green production environment
 
 Once the deployment is complete and we’re satisfied, we can scrap the old environment.
 
-![Blue-Green Deployment](./public/what-is-blue-green-deployment/bg4d-1-1024x415.jpg)
+![Blue-Green Deployment](./public/what-is-blue-green-deployment/bg4d.png){ width=70% }
 
 Blue is removed to free up resources and reduce costs
 
@@ -151,7 +151,6 @@ We have learned what blue-green deployments are, how they came to be, and the pr
 
 Learn about more ways of deploying software with these posts:
 
-- We’re working on a blue-green on Kubernetes detailed step-by-step guide. Don’t miss it! Subscribe to our [newsletter](https://semaphoreci.com/newsletter), and we’ll let you know as soon as it’s published.
 - [Kubernetes Deployments: The Ultimate Guide](https://semaphoreci.com/blog/kubernetes-deployment)
 - [A Step-by-Step Guide to Continuous Deployment on Kubernetes](https://semaphoreci.com/blog/guide-continuous-deployment-kubernetes)
 - [What’s the Difference Between Continuous Integration, Continuous Deployment, and Continuous Delivery?](https://semaphoreci.com/blog/2017/07/27/what-is-the-difference-between-continuous-integration-continuous-deployment-and-continuous-delivery.html)
