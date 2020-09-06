@@ -38,27 +38,19 @@ The basis of the blue-green method is side-by-side deployments. For that, we nee
 
 In its purest form, blue-green asks us to duplicate every resource our application depends on.
 
-![Blue-Green Deployment](./public/what-is-blue-green-deployment/bg1.png){ width=35% }
-
-Two independent production environments
+![Two independent production environments](./public/what-is-blue-green-deployment/bg1.png){ width=35% }
 
 In practice, however, it doesn’t always make sense to run a spare copy of everything. Keeping two databases in sync, for instance, is notably hard. For that reason, we frequently find blue-green deployments with shared components.
 
-![Blue Environment](./public/what-is-blue-green-deployment/bg2.png){ width=50% }
-
-Two production environments with some shared components
+![Two production environments with some shared components](./public/what-is-blue-green-deployment/bg2.png){ width=50% }
 
 We also need some way of switching incoming connections between the two environments. We’ll represent this with a router symbol. It can be an actual router, a load balancer, a reverse proxy, or, like in the original case, a web server.
 
-![Production Environment](./public/what-is-blue-green-deployment/bg3.png){ width=70% }
-
-The router switches traffic to one production environment at a time
+![The router switches traffic to one production environment at a time](./public/what-is-blue-green-deployment/bg3.png){ width=70% }
 
 Blue and green take turns to play the role of production. Only one of the environments is live at any given time. Say, for instance, that blue is active. In that case, it receives all the traffic—meanwhile, green acts as a staging area, where we can deploy and test the next version.
 
-![Blue-Green Deployment](./public/what-is-blue-green-deployment/bg3a.png){ width=70% }
-
-Users continue accessing v1 on blue while the new v2 release is deployed on green.
+![Users continue accessing v1 on blue while the new v2 release is deployed on green](./public/what-is-blue-green-deployment/bg3a.png){ width=70% }
 
 Once we make sure the version running in green is working well, we’ll switch the route. Then the cycle begins again.
 
@@ -72,27 +64,19 @@ Keeping two sets of environments up all the time can get expensive. Fortunately,
 
 The cloud abstracts most of the infrastructure away. We can picture deployments as a series of loosely coupled components.
 
-![Blue-Green Deployment](./public/what-is-blue-green-deployment/bg4a.png){ width=70% }
-
-Blue production environment in the cloud
+![Blue production environment in the cloud](./public/what-is-blue-green-deployment/bg4a.png){ width=70% }
 
 When it’s time for a new release, we create new resources without touching the live environment. In practice, we’ll use a [CI/CD](https://semaphoreci.com/cicd) tool like [Semaphore](https://semaphoreci.com/) to create identical new components and make the deployment.
 
-![Green production environment](./public/what-is-blue-green-deployment/bg4b.png){ width=70% }
-
-Green production environment is created on demand
+![Green production environment is created on demand](./public/what-is-blue-green-deployment/bg4b.png){ width=70% }
 
 We then re-route all user connections at once.
 
-![Blue-Green Deployment](./public/what-is-blue-green-deployment/bg4c.png){ width=70% }
-
-User traffic is cut-over to the green production environment
+![User traffic is cut-over to the green production environment](./public/what-is-blue-green-deployment/bg4c.png){ width=70% }
 
 Once the deployment is complete and we’re satisfied, we can scrap the old environment.
 
-![Blue-Green Deployment](./public/what-is-blue-green-deployment/bg4d.png){ width=70% }
-
-Blue is removed to free up resources and reduce costs
+![Blue is removed to free up resources and reduce costs](./public/what-is-blue-green-deployment/bg4d.png){ width=70% }
 
 One technology that makes blue-green very straightforward is Kubernetes. To learn more and see Kubernetes deployments in action, grab yourself a free copy of our eBook: [CI/CD with Docker and Kubernetes](https://semaphoreci.com/resources/cicd-docker-kubernetes).
 

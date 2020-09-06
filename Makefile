@@ -1,7 +1,8 @@
 # Add your markdown sources here
 # (do not include path or file extension)
-PAPERS = what-is-blue-green-deployment cicd-pipeline-a-gentle-introduction \
-		 cicd-continuous-integration-and-delivery-explained
+PAPERS = what-is-blue-green-deployment \
+		 cicd-pipeline-a-gentle-introduction \
+		 cicd-continuous-integration-and-delivery-explained 
 
 PAPERDIR = papers
 BUILDDIR = build
@@ -29,7 +30,6 @@ $(BUILDDIR)/pdf/%.pdf: $(BUILDDIR)/md/%.md
 		--pdf-engine=xelatex \
         -f markdown \
 		-d pdf-options.yml \
-		-H make-code-small.tex \
 		--resource-path=$(PAPERDIR) \
 		-o /data/$@ $^
 

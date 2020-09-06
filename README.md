@@ -22,16 +22,25 @@ Any images should be relative to this folder.
 
         cat footer.md >> papers/MY-AWESOME-PAPER.md
 
-3. Edit the markdown file. Fill in publication values in the footer (YOUR ORIGINAL PUB URL, etc). You may need to add a title at the beginning. Check everything looks OK:
-
-        $EDITOR papers/MY-AWESOME-PAPER.md
-
-3. Edit `Makefile` and add the new filename *without the extension or path* to the list in `PAPERS`:
+3. Review the markdown file (see next section).
+4. Edit `Makefile` and add the new filename *without the extension or path* to the list in `PAPERS`:
 
         PAPERS = paper-1 paper-2 ... MY-AWESOME-PAPER
 
-4. Build all the PDFs: `make pdf`
-5. Output PDF is in: `build/pdf/MY-AWESOME-PAPER.pdf`
+5. Build all the PDFs: `make pdf`
+6. Output PDF is in: `build/pdf/MY-AWESOME-PAPER.pdf`
+
+## Reviewing the markdown source
+
+Open the markdown file and check the following:
+
+- Add a title at the beginning.
+- Adjust the size of the images: add `{ width=100% }` at the end of the line and tweak the width as needed.
+
+        ![An image](./public/MY-AWESOME-PAPER/image1.png){ width=65% }
+
+- Check for long lines in code fences, you may need to split them to prevent clipping.
+- Fill in publication values in the footer. The strings starting with \__BUILD\_* are automatically expanded, leave them.
 
 ## Contributing
 
