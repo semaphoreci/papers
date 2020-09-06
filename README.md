@@ -39,6 +39,7 @@ Open the markdown file and check the following:
 
         ![An image](./public/MY-AWESOME-PAPER/image1.png){ width=65% }
 
+- Check for long lines in code fences, you may need to split them to prevent clipping.
 - Fill in publication values in the footer. The strings starting with \__BUILD\_* are automatically expanded, leave them.
 
 ## Contributing

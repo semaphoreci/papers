@@ -1,6 +1,4 @@
-# options for latex processor
-#
-
+# options for pdf latex processor
 
 variables:
   # Page options
@@ -70,3 +68,12 @@ variables:
   - BoldFont=*-Bold
   - ItalicFont=*-Italic
   - BoldItalicFont=*-BoldItalic
+  monofont: SourceCodePro
+  monofontoptions:
+  - Path=fonts/SourceCodePro/
+  - Extension=.ttf
+  - UprightFont=*-Regular
+  - BoldFont=*-Bold
+  - ItalicFont=*-Italic
+  - BoldItalicFont=*-BoldItalic
+
