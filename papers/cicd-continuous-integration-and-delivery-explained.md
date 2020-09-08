@@ -1,4 +1,10 @@
-## What is CI/CD?
+---
+title: Continuous Integration and Delivery Explained
+author-meta: Marko Anastasov
+subtitle: semaphoreci.com
+rights:  Creative Commmons Attribution-NonCommercialNoDerivatives 4.0 International
+language: en-US
+...
 
 CI/CD is a way of developing software in which you’re able to release updates at any time in a sustainable way. When changing code is routine, development cycles are more frequent, meaningful and faster.
 

@@ -1,4 +1,10 @@
-# What Is Blue-Green Deployment?
+---
+title: What Is Blue-Green Deployment?
+author-meta: Tomas Fernandez
+subtitle: semaphoreci.com
+rights:  Creative Commmons Attribution-NonCommercialNoDerivatives 4.0 International
+language: en-US
+...
 
 _Practiced by the likes of Amazon for more than a decade, blue-green is a proven and safe method for continuous software deployment._
 

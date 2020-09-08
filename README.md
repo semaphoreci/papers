@@ -34,13 +34,22 @@ Any images should be relative to this folder.
 
 Open the markdown file and check the following:
 
-- Add a title at the beginning.
+- Add a title and other [valid metadata](https://pandoc.org/MANUAL.html#metadata-variables) at the beginning.
+
+        ---
+        title: YOUR TITLE
+        author-meta: YOUR AUTHOR
+        subtitle: semaphoreci.com
+        rights:  Creative Commmons Attribution-NonCommercialNoDerivatives 4.0 International
+        language: en-US
+        ...
+
 - Adjust the size of the images: add `{ width=100% }` at the end of the line and tweak the width as needed.
 
         ![An image](./public/MY-AWESOME-PAPER/image1.png){ width=65% }
 
 - Check for long lines in code fences, you may need to split them to prevent clipping.
-- Fill in publication values in the footer. The strings starting with \__BUILD\_* are automatically expanded, leave them.
+- Fill in publication details in the footer. The strings starting with \__BUILD\_* are automatically expanded.
 
 ## Contributing
 

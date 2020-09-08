@@ -1,4 +1,10 @@
-# CI/CD Pipeline: A Gentle Introduction
+---
+title: CI/CD Pipeline - A Gentle Introduction
+author-meta: Marko Anastasov
+subtitle: semaphoreci.com
+rights:  Creative Commmons Attribution-NonCommercialNoDerivatives 4.0 International
+language: en-US
+...
 
 Do you want your engineering team to deliver bug-free code at high velocity? A fast and reliable [CI/CD](https://semaphoreci.com/cicd) pipeline is crucial for doing that sustainably over time.
 
