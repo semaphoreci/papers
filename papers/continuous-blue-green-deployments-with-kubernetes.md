@@ -14,8 +14,6 @@ The gist of blue-green deployments is to have two identical environments, conven
 
 ![Blue-green deployments at glance](./public/continuous-blue-green-deployments-with-kubernetes/bg-overview.png){ width=70% }
 
-Blue-green deployments at a glance
-
 Blue and green take turns. On each cycle, we deploy new versions into the idle environment, test them, and finally switch routes so all users can start using it. With this method, we get three benefits:
 
 - We test in a real production environment.
@@ -36,8 +34,6 @@ Let’s see Kubernetes blue-green deployments in action. Imagine we have version
 
 ![V1 deployment running in blue](./public/continuous-blue-green-deployments-with-kubernetes/bg1.png){ width=70% }
 
-v1 deployment running in blue
-
 Sometime later, we have the next version (`v2`) ready to go. So we create a brand-new production environment called green. As it turns out, in Kubernetes we only have to declare a new deployment, and the platform takes care of the rest. Users are not yet aware of the change as the blue environment keeps on working unaffected. They won’t see any change until we switch traffic over from blue to green.
 
 ![A new deployment is created to run V2](./public/continuous-blue-green-deployments-with-kubernetes/bg2.png){ width=60% }
@@ -46,13 +42,9 @@ It’s said that only developers that like to live dangerously test in productio
 
 ![v2 is active on green, v1 is on stand-by on blue](./public/continuous-blue-green-deployments-with-kubernetes/bg3.png){ width=60% }
 
-v2 is active on green, v1 is on stand-by on blue
-
 Once we have moved the users from blue to green and happy with the result, we can delete blue to free up resources.
 
 ![blue deployment is gone](./public/continuous-blue-green-deployments-with-kubernetes/bg4.png){ width=70% }
-
-Blue deployment is gone
 
 As you can imagine, blue-green deployments are complex. We have to grapple with two deployments at once and manage the network. Fortunately, Kubernetes makes things a lot easier. Even so, we should strive to automate the release cycle as much as possible. In this tutorial, I’m going to show you how to use Semaphore [Continuous Integration](https://semaphoreci.com/continuous-integration) (CI) and [Continuous Delivery](https://semaphoreci.com/blog/cicd) (CD) to test and release any project.
 
@@ -357,8 +349,6 @@ We can represent the sequence more visually using a flowchart.
 
 ![deployment flowchart](./public/continuous-blue-green-deployments-with-kubernetes/flowchart.png){ width=95% }
 
-Deployment flowchart
-
 ## Connecting Semaphore with Kubernetes
 
 Semaphore needs access to the Kubernetes cluster to make the deployment. To do this, follow these steps to create a [secret](https://docs.semaphoreci.com/essentials/using-secrets/):
@@ -408,8 +398,6 @@ To begin, open the Workflow Editor.
 
 ![deploy to blue](./public/continuous-blue-green-deployments-with-kubernetes/blue1.png){ width=95% }
 
-Deploy to blue promotion
-
 - Type the following conditions to follow releases tagged like `v1.2.3-blue`:
 
 ```
@@ -436,8 +424,6 @@ fi
 ```
 
 ![sanity check block](./public/continuous-blue-green-deployments-with-kubernetes/blue0.png){ width=95% }
-
-Sanity check block
 
 ### Adding a Deployment Block
 
@@ -469,8 +455,6 @@ kubectl exec -it -c myapp \
 ```
 
 ![deploy block](./public/continuous-blue-green-deployments-with-kubernetes/blue2.png){ width=95% }
-
-Deploy block
 
 ### Adding Smoke Tests
 
@@ -504,8 +488,6 @@ test "$TEST_VALUE" = "true"
 
 ![smoke tests block](./public/continuous-blue-green-deployments-with-kubernetes/blue3.png){ width=95% }
 
-Smoke tests block
-
 ### Activating the Blue Route
 
 The only thing left is to change the route.
@@ -513,8 +495,6 @@ The only thing left is to change the route.
 - Create a new **promotion** called “Activate Blue”
 
 ![activate blue promotion](./public/continuous-blue-green-deployments-with-kubernetes/blue-promotion-prod.png){ width=95% }
-
-Activate blue promotion
 
 - Set the `COLOR_ACTIVE` variable to `blue`.
 - Configure the **prologue** commands exactly as you did earlier.
@@ -528,8 +508,6 @@ kubectl apply -f _route.yml
 ```
 
 ![activate blue route block](./public/continuous-blue-green-deployments-with-kubernetes/blue-switch.png){ width=95% }
-
-Activate blue route block
 
 ## Cleanup Pipelines
 
@@ -552,11 +530,7 @@ fi
 
 ![decomission promotion](./public/continuous-blue-green-deployments-with-kubernetes/dc-green-1.png){ width=95% }
 
-Decomission promotion
-
 ![decomission block](./public/continuous-blue-green-deployments-with-kubernetes/dc-green-2.png){ width=95% }
-
-Decomission block
 
 ### Rollback Pipeline
 
@@ -575,11 +549,7 @@ kubectl apply -f _route.yml
 
 ![rollback promotion](./public/continuous-blue-green-deployments-with-kubernetes/rb-green-1.png){ width=75% }
 
-Rollback promotion
-
 ![rollback block](./public/continuous-blue-green-deployments-with-kubernetes/rb-green-2.png){ width=95% }
-
-Rollback block
 
 Congratulations! Your blue pipelines are ready.
 
@@ -601,11 +571,7 @@ result = 'passed' AND tag =~ '^v.*-green$'
 
 ![green deploy pipelines](./public/continuous-blue-green-deployments-with-kubernetes/green-staging.png){ width=95% }
 
-Create the green deploy pipelines
-
 ![create the green activate & cleanup pipelines](./public/continuous-blue-green-deployments-with-kubernetes/green-prod.png){ width=95% }
-
-Create the green activate & cleanup pipelines
 
 When you’re done, save your work with **Run the Workflow** > **Start**.
 
@@ -615,34 +581,28 @@ Let’s do this. Imagine we want to release `v1.0` of our awesome application. I
 
 1. Get the latest revision from GitHub.
 
-```bash
-$ git pull origin setup-semaphore
-$ git checkout setup-semaphore
-```
+    ```bash
+    $ git pull origin setup-semaphore
+    $ git checkout setup-semaphore
+    ```
 
 2. Create a release according to the naming convention.
 
-```bash
-$ git tag -a v1.0-green -m "release v1.0 to green"
-$ git commit -m "releasing v1.0"
-$ git push origin v1.0-green
-```
+    ```bash
+    $ git tag -a v1.0-green -m "release v1.0 to green"
+    $ git commit -m "releasing v1.0"
+    $ git push origin v1.0-green
+    ```
 
 3. Semaphore picks up the commit and begins working. When the deploy pipeline stops, click on **promote** to switch traffic to green:
 
-![switch users to green](./public/continuous-blue-green-deployments-with-kubernetes/green-promote1.png){ width=95% }
+    ![switch users to green](./public/continuous-blue-green-deployments-with-kubernetes/green-promote1.png){ width=95% }
 
-Switch users to green
-
-![green route active](./public/continuous-blue-green-deployments-with-kubernetes/green-complete1.png){ width=95% }
-
-Green route active
+    ![green route active](./public/continuous-blue-green-deployments-with-kubernetes/green-complete1.png){ width=95% }
 
 4. If everything goes as planned, the happy path is to decommission blue:
 
-![green deployment complete](./public/continuous-blue-green-deployments-with-kubernetes/green-decomm1.png){ width=95% }
-
-Green deployment complete
+    ![green deployment complete](./public/continuous-blue-green-deployments-with-kubernetes/green-decomm1.png){ width=95% }
 
 You can check the status of your deployment with the following commands:
 
@@ -671,8 +631,6 @@ myapp-gateway   75m
 To view the active route run: `kubectl describe virtualservice/myapp-blue-green`
 
 ![active route](./public/continuous-blue-green-deployments-with-kubernetes/get-vs.png){ width=80% }
-
-Active route
 
 ## Handling Simultaneous Deployments
 
@@ -756,9 +714,7 @@ $ git push origin v2.0-blue
 2. This time, the blue pipelines are activated.
 3. Wait for it to stop, press **promote**.
 
-![blue](./public/continuous-blue-green-deployments-with-kubernetes/blue-promote1.png){ width=95% }
-
-Switch users to blue
+![blue promotion](./public/continuous-blue-green-deployments-with-kubernetes/blue-promote1.png){ width=95% }
 
 4. You can now remove green or try a rollback.
 
