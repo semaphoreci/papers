@@ -2,7 +2,8 @@
 # (do not include path or file extension)
 PAPERS = what-is-blue-green-deployment \
 		 cicd-pipeline-a-gentle-introduction \
-		 cicd-continuous-integration-and-delivery-explained 
+		 cicd-continuous-integration-and-delivery-explained \
+         continuous-blue-green-deployments-with-kubernetes
 
 PAPERDIR = papers
 BUILDDIR = build
