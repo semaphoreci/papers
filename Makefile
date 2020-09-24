@@ -3,7 +3,8 @@
 PAPERS = what-is-blue-green-deployment \
 		 cicd-pipeline-a-gentle-introduction \
 		 cicd-continuous-integration-and-delivery-explained \
-         continuous-blue-green-deployments-with-kubernetes
+         continuous-blue-green-deployments-with-kubernetes \
+		 continuous-integration-explained
 
 PAPERDIR = papers
 BUILDDIR = build
