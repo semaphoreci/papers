@@ -13,4 +13,4 @@ blocks:
         - name: Upload files
           commands:
             - cd build/pdf
-            - 'for f in *.pdf; do curl -k curl -k -u $FTP_USER:$FTP_PASSWORD sftp://s2blog.sftp.wpengine.com:2222/wp-content/uploads/pdf-downloads/ -T "$f"; done'
+            - 'for f in *.pdf; do curl -k curl -k -u $FTP_USER:$FTP_PASSWORD sftp://$FTP_HOST:$FTP_PORT/wp-content/uploads/pdf-downloads/ -T "$f"; done'
