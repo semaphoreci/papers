@@ -1,0 +1,14 @@
+version: v1.0
+name: Publish to WordPress
+agent:
+  machine:
+    type: e1-standard-2
+    os_image: ubuntu1804
+blocks:
+  - name: SFTP Upload
+    task:
+      jobs:
+        - name: Upload files
+          commands:
+            - cd build/pdf
+            - 'for f in *.pdf; do curl -k curl -k -u $FTP_USER:$FTP_PASSWORD sftp://s2blog.sftp.wpengine.com:2222/wp-content/uploads/pdf-downloads/ -T "$f"; done'

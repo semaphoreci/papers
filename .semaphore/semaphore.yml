@@ -8,8 +8,13 @@ blocks:
   - name: make
     task:
       jobs:
-        - name: 'Make PDF'
+        - name: Make PDF
           commands:
             - checkout
             - make pdf
             - for f in build/pdf/*.pdf; do artifact push workflow "$f"; done
+promotions:
+  - name: Publish
+    pipeline_file: publish.yml
+    auto_promote:
+      when: branch = 'master' AND result = 'passed'
