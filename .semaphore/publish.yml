@@ -7,6 +7,8 @@ agent:
 blocks:
   - name: SFTP Upload
     task:
+      secrets:
+        - name: wordpress-sftp
       jobs:
         - name: Upload files
           commands:
