@@ -13,6 +13,7 @@ blocks:
             - checkout
             - make pdf
             - for f in build/pdf/*.pdf; do artifact push workflow "$f"; done
+            - cache store build-pdf-$SEMAPHORE_WORKFLOW_ID build/
 promotions:
   - name: Publish
     pipeline_file: publish.yml

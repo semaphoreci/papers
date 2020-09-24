@@ -12,5 +12,6 @@ blocks:
       jobs:
         - name: Upload files
           commands:
+            - cache restore build-pdf-$SEMAPHORE_WORKFLOW_ID
             - cd build/pdf
             - 'for f in *.pdf; do curl -k curl -k -u $FTP_USER:$FTP_PASSWORD sftp://$FTP_HOST:$FTP_PORT/wp-content/uploads/pdf-downloads/ -T "$f"; done'
