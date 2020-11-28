@@ -254,6 +254,8 @@ spec:
         app: myapp
         color: $COLOR_TEST
     spec:
+      imagePullSecrets:
+      - name: dockerhub
       containers:
       - name: myapp
         image: $DOCKER_USERNAME/myapp:$SEMAPHORE_WORKFLOW_ID
@@ -278,7 +280,18 @@ spec:
             value: "$DB_PASSWORD"
 ```
 
-Second, we’ll use a service to get a stable IP and hostname for the application. This [service](https://kubernetes.io/docs/concepts/services-networking/service/) targets the application pods labeled as `app = myapp`.
+Second, you’ll need to store your docker registry credentials in the Kubernetes cluster. To do this run the following command. You only have to do this once:
+
+```bash
+$ kubectl create secret docker-registry dockerhub \
+--docker-server=docker.io \
+--docker-username=YOUR_DOCKER_HUB_USERNAME \
+--docker-password=YOUR_DOCKER_HUB_PASSWORD
+
+secret/dockerhub created
+```
+
+Finally, we’ll use a service to get a stable IP and hostname for the application. This [service](https://kubernetes.io/docs/concepts/services-networking/service/) targets the application pods labeled as `app = myapp`.
 
 ```yaml
 # manifests/service.yml
