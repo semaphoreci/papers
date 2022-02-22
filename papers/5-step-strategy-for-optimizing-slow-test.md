@@ -1,6 +1,10 @@
-
-# Optimizing your tests in 5 steps
-<span id="process"></span>
+---
+title: 5-Step Strategy for Optimizing Slow Tests
+author-meta: Tomas Fernandez
+subtitle: semaphoreci.com
+rights:  Creative Commmons Attribution-NonCommercialNoDerivatives 4.0 International
+language: en-US
+...
 
 Professional software development is a feedback-based process — each new iteration is informed by past results. Feedback is powered to a considerable degree by tests.
 
@@ -168,9 +172,25 @@ Upon seeing a slow test suite for the first time, you may feel overwhelmed and d
 
 Tests should help development, not block it. Timely feedback and a fast CI pipeline are the safety net that lets the team experiment, enhance, and release frequently. Every second shaved from a test is a compounded win. Make fast tests a priority today!
 
-**Read next**:
+\newpage
 
--
--
--
--
+© __BUILD_YEAR__ Rendered Text. All rights reserved.
+
+This work is licensed under Creative Commmons
+Attribution-NonCommercial-NoDerivatives 4.0 International.
+To view a copy of this license, visit
+<https://creativecommons.org/licenses/by-nc-nd/4.0>
+
+The source text is open source:
+<https://github.com/semaphoreci/papers>
+
+Originally published at:
+<https://semaphoreci.com/cicd>
+
+Authors: Tomas Fernandez
+
+Build date: __BUILD_MONTH__ __BUILD_YEAR__
+
+Revision: __BUILD_REVISION__
+
+\newpage
