@@ -1,10 +1,11 @@
 # Add your markdown sources here
 # (do not include path or file extension)
 PAPERS = what-is-blue-green-deployment \
-		 cicd-pipeline-a-gentle-introduction \
-		 cicd-continuous-integration-and-delivery-explained \
-         continuous-blue-green-deployments-with-kubernetes \
-		 continuous-integration-explained
+		cicd-pipeline-a-gentle-introduction \
+		cicd-continuous-integration-and-delivery-explained \
+		continuous-blue-green-deployments-with-kubernetes \
+		continuous-integration-explained \
+		5-step-strategy-for-optimizing-slow-test
 
 PAPERDIR = papers
 BUILDDIR = build
