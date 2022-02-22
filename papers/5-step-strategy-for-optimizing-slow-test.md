@@ -22,7 +22,7 @@ Tolerating a slow test suite is like making the minimum credit card payment when
 
 Whatever happens, development speed falters due to the lack of timely feedback.
 
-![](./public/slow-tests/slow-feedback.png){ width=70% }
+![](./public/slow-tests/slow-feedback.png){ width=90% }
 
 Fortunately, we have a battle-tested plan that makes identifying and fixing slow tests much easier.
 
@@ -45,7 +45,7 @@ It can be hard to find the slowest tests when you have an extended CI/CD pipelin
 
 There’s a little bit of setup required: you need to configure the test’s output to the [JUnit format](https://junit.org/junit5/), as well as add a few commands. The result is, however, well worth the effort. In the detailed dashboard, you can spot problems, filter skipped tests, or order them by duration.
 
-![](./public/slow-tests/slowest-first.png){ width=70% }
+![](./public/slow-tests/slowest-first.png){ width=95% }
 
 Once you have a list of slow candidates to work on, you’re ready for the next step.
 
@@ -56,9 +56,11 @@ Two factors come into play for deciding where to start: how much faster you can 
 
 In other words, we want to start working on tests that maximize:
 
->  test runtime before - test runtime after
->  ----------------------------------------
->                   effort
+```
+  test runtime before - test runtime after
+  ----------------------------------------
+                   effort
+```
 
 The trouble is that the only certainty we have at this point is how long the test takes. Everything else that we have is an estimation. Consider starting with a few easy-to-fix tests or deleting ones that do not add value, even if there are slower candidates in your suite. Once you have a good grasp of the process, you can go after slower tests that require more substantial effort to optimize.
 
@@ -68,7 +70,7 @@ The testing pyramid can guide us here. The width of each level reflects the sugg
 
 The pyramid tells us that a good test suite should have many unit tests, some integration tests, and a few end-to-end or acceptance tests. In contrast, slow suites tend to be more top-level heavy, i.e. the opposite of what they should look like.
 
-![](./public/slow-tests/hanoi.png){ width=70% }
+![](./public/slow-tests/hanoi.png){ width=60% }
 
 The way forward lies in cutting the fat at the top, either by deleting some tests or moving them downwards.
 
@@ -127,7 +129,7 @@ Some problems, however, resist optimization and need heavier tools. For such cas
 
 Profilers and debuggers come in many flavors and colors. You can be sure that your language has more than one. A profiler records how much time each instruction takes, letting you locate “hot spots” in your tests. Sometimes the results can be visually striking.
 
-![](./public/slow-tests/flamegraph.png){ width=70% }
+![](./public/slow-tests/flamegraph.png){ width=90% }
 
 Even the most general profiler tool will show you each statement's accumulated time. These are called *statistical profilers* and give you a panoramic view of what the test is doing. An example of such a profiler is [rbspy](https://rbspy.github.io/):
 
