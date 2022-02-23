@@ -86,7 +86,7 @@ The way forward lies in cutting the fat at the top, either by deleting some test
 
 Maybe an example can help at this point. Imagine that we want to write an [acceptance test](https://semaphoreci.com/blog/the-benefits-of-acceptance-testing) for an online music service:
 
-``` gherkin
+``` feature
 Feature: Control playback
 
     Scenario: play a song
@@ -104,7 +104,7 @@ It’s a valuable test that checks a business-critical feature. You may be able 
 
 At the other extreme, we have this:
 
-``` gherkin
+``` feature
 Feature: Search for music
 
     Scenario: search song cannot have an emoji symbol
@@ -278,7 +278,7 @@ Tests add value to the extent that they maintain their distance from the impleme
 
 Imagine that we have a class representing a shopping cart, like the one shown below:
 
-``` text
+``` java
 class ShoppingCart {
 
 	Item _lastItemAdded;
@@ -303,7 +303,7 @@ class ShoppingCart {
 
 And we write the following test:
 
-``` text
+``` java
 // test item added
 item = new Item("bottle", 10.50);
 cart = new ShoppingCart();
@@ -322,7 +322,7 @@ The test knows too much about the internal details of the tested class. It’s b
 
 Think about this: you want the test to fail only if the behavior of the public interface changes. So, let’s make tests all about the behavior.
 
-``` text
+``` java
 // test item added
 item = new Item("bottle", 10.50);
 cart = new ShoppingCart();
@@ -339,19 +339,19 @@ Large-scale refactoring doesn’t take place overnight — it’s going to take 
 
 Branch by abstraction starts by picking a component to decouple from the rest of the codebase:
 
-![](./public/nine-ways-slow-tests/branch1.png)
+![](./public/nine-ways-slow-tests/branch1.png){ width=90% }
 
 Next, wrap the component in an abstraction layer and redirect all calls to the new layer.
 
-![](./public/nine-ways-slow-tests/branch2.png)
+![](./public/nine-ways-slow-tests/branch2.png){ width=90% }
 
 The abstraction layer hides the implementation details. If the component is big and cumbersome, create a copy and work on it until it’s ready. Then, refactor the component until it’s independently testable.
 
-![](./public/nine-ways-slow-tests/branch3.png)
+![](./public/nine-ways-slow-tests/branch3.png){ width=90% }
 
 Once refactoring is done, switch the abstraction layer to the new implementation.
 
-![](./public/nine-ways-slow-tests/branch4.png)
+![](./public/nine-ways-slow-tests/branch4.png){ width=90% }
 
 ### Making tests self-contained
 
@@ -416,17 +416,18 @@ assert name == "John"
 **How to delete a test**
 
 It’s safer to remove obsolete tests in two stages:
-0. Run test suite locally and verify ALL PASS
-1. Remove the tested code.
-2. If nothing breaks, delete the test.
+
+0.   Run test suite locally and verify ALL PASS
+1.   Remove the tested code.
+2.   If nothing breaks, delete the test.
 
 Tests should be falsifiable. In other words, removing the code should make the test fail — if it doesn’t, what were you testing?
 
-![](./public/nine-ways-slow-tests/dead2.png)
+![](./public/nine-ways-slow-tests/dead2.png){ width=90% }
 
 Once we’re sure there wasn’t any collateral damage from deleting the code, let’s remove the test.
 
-![](./public/nine-ways-slow-tests/dead3.png)
+![](./public/nine-ways-slow-tests/dead3.png){ width=90% }
 
 ### Eliminate wait/sleep statements from tests
 
@@ -439,7 +440,7 @@ The presence of sleep statements in a test shows that the developer needed to wa
 
 Sleep statements are usually found between a function call and it’s verifying assertion:
 
-``` text
+``` javascript
 output1 = my_async_function(parameters)
 // wait 2000 milliseconds
 wait(2000)
@@ -571,7 +572,8 @@ When it comes to using a database, there are a number of classic slip-ups. Perha
 ``` text
 users = db.exec("SELECT id, name FROM Users")
 foreach user in users
-	email = db.exec("SELECT email FROM Emails WHERE userid = $user['id']")
+	email = db.exec("SELECT email FROM Emails
+                    WHERE userid = $user['id']")
 	body = "Hello $user['name']"
 	sendEmail(body, email)
 end foreach
@@ -592,7 +594,7 @@ end foreach
 
 **Selecting all columns**
 
-![](./public/nine-ways-slow-tests/does-not-select.jpg)
+![](./public/nine-ways-slow-tests/does-not-select.jpg){ width=80% }
 
 Selecting all columns is another easy-to-make mistake. The query `SELECT *` presents several problems:
 
@@ -665,7 +667,7 @@ An API is designed for programmatic access and it will always be a better fit fo
 
 The following example shows a basic UI test. It visits a URL, does a search, and verifies the resulting value:
 
-``` text
+``` java
 driver = new ChromeDriver();
 driver.get("http://myapp/users");
 
@@ -674,7 +676,8 @@ driver.findElement(By.linkText("User")).sendKeys("John");
 driver.findElement(By.linkText("Search")).click();
 
 // validate result
-firstTableCell = driver.findElement(By.Xpath("//table/tbody/tr[0]/td[0]"));
+firstTableCell = driver.findElement(
+                By.Xpath("//table/tbody/tr[0]/td[0]"));
 assertEquals(firstTableCell.getText(), "John")
 ```
 
@@ -682,7 +685,7 @@ Even such a simple test requires a lot: we need to open a browser, wait for the 
 
 Compare that with a more [subcutaneous test](https://martinfowler.com/bliki/SubcutaneousTest.html) pinging the same API endpoint that the application consumes.
 
-``` text
+``` java
 request = fetch("http://myapi/v1/users$?name=John");
 
 assertEquals(request.status(), 200);
@@ -761,7 +764,7 @@ Being too strict about the UI is not a good idea, as it makes it easy to break a
 
 That doesn't mean that UI tests aren't valuable. We just need to be picky about which paths to test. As an example, you most definitely want to ensure that new users can create an account or that existing users can log in. Conversely, testing what happens when a user enters a non-Unicode character into a search box is better served by a unit test.
 
-![](./public/nine-ways-slow-tests/ui-decision.png)
+![](./public/nine-ways-slow-tests/ui-decision.png){ width=90% }
 
 There are no hard and fast rules. Finding what works depends entirely on the nature of your application. Think about the primary user experience (the happy paths) and forget about edge cases — at least where UI testing is concerned.
 
