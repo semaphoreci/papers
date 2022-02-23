@@ -12,7 +12,7 @@ When tests slow development down, engineering teams lose momentum and become fru
 
 Choosing a scalable cloud platform like Semaphore is a great start. Semaphore offers some features that are helpful in dealing with slow tests, which we will discuss later in the article.
 
-## What’s wrong with waiting for tests?
+**What’s wrong with waiting for tests?**
 
 Tolerating a slow test suite is like making the minimum credit card payment when you could pay off your balance: by not dealing with it now you have a bit more cash in the short term, but will have to pay much more down the road. It doesn’t make any sense, but people do it because the costs are not immediately obvious. When faced with slow tests, developers typically respond in one of three ways:
 
@@ -26,7 +26,7 @@ Whatever happens, development speed falters due to the lack of timely feedback.
 
 Fortunately, we have a battle-tested plan that makes identifying and fixing slow tests much easier.
 
-### The complete guide for making your slow tests fast
+## The complete guide for making your slow tests fast
 
 This guide consists of two parts:
 
@@ -187,7 +187,7 @@ Software development is modulated by the tools supporting it. Of these, testing 
 
 When tests slow down, development follows suit. Teams get frustrated when they can’t meet their goals and organizations deploy as fast as they want. At Semaphore, we’ve seen our fair share of tests and have identified the nine factors that slow tests down.
 
-### How fast should tests be?
+**How fast should tests be?**
 
 Tests are consumed first and foremost by developers, who run them first on their machines before committing changes. Fast tests keep developers productive, enabling them to maintain the creative focus that's so important for problem-solving.
 
@@ -201,7 +201,7 @@ To be more accurate, you're not really doing continuous integration unless your 
 
 ![](./public/nine-ways-slow-tests/pipeline.png)
 
-### Making slow tests fast again
+**Making slow tests fast again**
 
 How do we fix slow tests? And how do we accelerate a CI/CD pipeline? Here are the nine most common performance problems and their solutions:
 
@@ -254,7 +254,7 @@ Breaking this test up could make it **up to 3 times faster**. Depending on your 
 Parallelization, however, isn’t without dangers. Tests running in sequence do take longer but are easier to wrap one’s head around. Concurrency, on the other hand, is complex. It may produce unexpected results if tests have side effects and are not [isolated](#mock-services). A small mistake can lead to hard-to-debug problems, race conditions, and [flaky tests](https://semaphoreci.com/community/tutorials/how-to-deal-with-and-eliminate-flaky-tests).
 ![](./public/nine-ways-slow-tests/multithread.jpg)
 
-### Parallel jobs in CI/CD
+**Parallel jobs in CI/CD**
 
 If you take away only one thing in this whole article, let it be this: **[parallelization](https://semaphoreci.com/blog/revving-up-continuous-integration-with-parallel-testing)**  has the most immediate benefits with the least effort — mainly when applied to the CI/CD pipeline — despite the aforementioned hurdles in its implementation. Once parallelizing ceases to be cost-effective, continue with the rest of the recommendations in the article.
 
@@ -333,7 +333,7 @@ assert cart.getItem[0].name == "bottle";
 assert cart.getItem[0].price == 10.50;
 ```
 
-### Branch by abstraction
+**Branch by abstraction**
 
 Large-scale refactoring doesn’t take place overnight — it’s going to take a few weeks or even months. Gradual change can be achieved using branching by abstraction. This technique allows you to continue shipping releases while change takes place.
 
@@ -413,7 +413,7 @@ name = person.getName()
 assert name == "John"
 ```
 
-### How to delete a test
+**How to delete a test**
 
 It’s safer to remove obsolete tests in two stages:
 0. Run test suite locally and verify ALL PASS
@@ -477,7 +477,7 @@ In both cases, the most correct implementation would also include some form of t
 
 Frequently, waits are added as a workaround for a [flaky test](https://semaphoreci.com/community/tutorials/how-to-deal-with-and-eliminate-flaky-tests) — a test that succeeds and fails at times for no apparent reason. Waiting, however, is not a correct solution; it just hides the problem.
 
-### Waiting for services
+**Waiting for services**
 
 Sleep statements should be replaced with proper polling or messaging to determine when the needed resource is ready. This works, and in some cases it may be the only alternative you have:
 
@@ -562,7 +562,7 @@ usercount = countUsers(MockedDB)
 assert usercount == 3
 ```
 
-### Querying a real database
+**Querying a real database**
 
 Mocks don't always work. You’ll find that an actual database is sometimes needed, especially during integration and end-to-end testing. Semaphore provides [popular database services out-of-the-box](https://docs.semaphoreci.com/ci-cd-environment/sem-service-managing-databases-and-services-on-linux/) that you can quickly spin up in your test environment.
 
@@ -589,7 +589,7 @@ foreach user in users
 end foreach
 ```
 
-### Selecting all columns
+**Selecting all columns**
 
 ![](./public/nine-ways-slow-tests/does-not-select.jpg)
 
@@ -615,7 +615,7 @@ FROM Users U
 JOIN Orders O on O.userid = O.id
 ```
 
-### Batching operations
+**Batching operations**
 
 Batching is the ability to change multiple records in a single transaction. Reaching data speeds much higher than regular transactions, batching is an excellent way of initializing a test. Thus, instead of inserting one row at a time like this:
 
@@ -711,7 +711,7 @@ Feature: Checkout cart
     Then my order should be accepted
 ```
 
-### Cheating in the test
+**Cheating in the test**
 
 The scenario above calls for a shopping cart with products. This is a given precondition, but the test doesn’t care *how* the cart was filled. We can "cheat" and prefill the cart directly with a database query, which means that we don’t have to go through the UI. The point here is that **not everything needs to go through the UI**.
 
@@ -761,7 +761,7 @@ That doesn't mean that UI tests aren't valuable. We just need to be picky about 
 
 There are no hard and fast rules. Finding what works depends entirely on the nature of your application. Think about the primary user experience (the happy paths) and forget about edge cases — at least where UI testing is concerned.
 
-### Don’t neglect your tests
+## Don’t neglect your tests
 
 The importance of responsive tests cannot be overstated. Tests are code and should be treated with the same care. Time must be allocated to upkeep them because the speed of the test suite directly correlates to how often you can release software. A test suite will gradually slow down unless it is dutifully maintained, dragging the team's morale down and making your organization miss deadlines. Don’t let that happen!
 
