@@ -26,15 +26,17 @@ Whatever happens, development speed falters due to the lack of timely feedback.
 
 Fortunately, we have a battle-tested plan that makes identifying and fixing slow tests much easier.
 
-## The complete guide for making your slow tests fast
+### The complete guide for making your slow tests fast
 
 This guide consists of two parts:
-- [Part 1](#a-framework-for-making-slow-tests-fast) lays down a framework to identify, prioritize and optimze the slow tests in your suite.
-- [Part 2](#9-ways-to-make-slow-tests-faster) deals with the most common sources of slow test performance and their solutions.
+
+-   [Part 1](#part1) lays down a framework to identify, prioritize and optimze the slow tests in your suite.
+-   [Part 2](#part2) deals with the most common sources of slow test performance and their solutions.
 
 \newpage
 
 ## A framework for making slow tests fast
+<span id="part1"></span>
 
 Dealing with slow tests requires both a concerted effort and a sound plan:
 1. [Identify](#step1): which tests are bad performers.
@@ -177,6 +179,7 @@ For reference, proper continuous integration can happen only when [it takes 10 m
 \newpage
 
 ## 9 Ways To Make Slow Tests Faster
+<span id="part2"></span>
 
 From developers to testers, from business analysts to management, everyone in your organization must be committed to keeping tests in top condition. If you have an extensive test suite, you'll need a plan to focus the effort. Check out our [5-step framework for identifying and optimizing tests](https://semaphoreci.com/blog/slow-tests-strategy) if you’re not sure where to start.
 
@@ -184,7 +187,7 @@ Software development is modulated by the tools supporting it. Of these, testing 
 
 When tests slow down, development follows suit. Teams get frustrated when they can’t meet their goals and organizations deploy as fast as they want. At Semaphore, we’ve seen our fair share of tests and have identified the nine factors that slow tests down.
 
-## How fast should tests be?
+### How fast should tests be?
 
 Tests are consumed first and foremost by developers, who run them first on their machines before committing changes. Fast tests keep developers productive, enabling them to maintain the creative focus that's so important for problem-solving.
 
@@ -198,7 +201,7 @@ To be more accurate, you're not really doing continuous integration unless your 
 
 ![](./public/nine-ways-slow-tests/pipeline.png)
 
-## Making slow tests fast again
+### Making slow tests fast again
 
 How do we fix slow tests? And how do we accelerate a CI/CD pipeline? Here are the nine most common performance problems and their solutions:
 
@@ -213,7 +216,7 @@ How do we fix slow tests? And how do we accelerate a CI/CD pipeline? Here are th
 9. [My tests cover every edge case in the UI](#ui-tests): focus only on the most critical paths for your users.
 
 
-## Breaking up large tests
+### Breaking up large tests
 
 <span id="large-tests"></span>
 
@@ -262,7 +265,7 @@ Dividing tests opens up a whole new level of optimization. Cloud services like S
 ![](./public/nine-ways-slow-tests/split-job.png)
 
 
-## Make tests independently-runnable
+### Make tests independently-runnable
 
 <span id="decouple-components"></span>
 
@@ -350,7 +353,7 @@ Once refactoring is done, switch the abstraction layer to the new implementation
 
 ![](./public/nine-ways-slow-tests/branch4.png)
 
-## Making tests self-contained
+### Making tests self-contained
 
 <span id="mock-services"></span>
 
@@ -392,7 +395,7 @@ Mocking, stubbing, and test doubles allow you to run a piece of code in isolatio
 
 To help you isolate tests, Semaphore enforces a clean environment for each job.
 
-## Remove obsolete tests and dead code
+### Remove obsolete tests and dead code
 
 <span id="remove-obsolete"></span>
 
@@ -425,7 +428,7 @@ Once we’re sure there wasn’t any collateral damage from deleting the code, l
 
 ![](./public/nine-ways-slow-tests/dead3.png)
 
-## Eliminate wait/sleep statements from tests
+### Eliminate wait/sleep statements from tests
 
 <span id="remove-wait"></span>
 
@@ -496,7 +499,7 @@ end function
 connect(port, run_test)
 ```
 
-## Optimize database queries in tests
+### Optimize database queries in tests
 
 <span id="optimize-queries"></span>
 
@@ -649,7 +652,7 @@ end
 
 It takes a bit of knowledge of Ruby to understand that `before(:each)` and `after(:each)` are not the optimal choices here. The test creates and deletes a user for every `it` statement. Since none of the tests mutate data, you can initialize the dataset once with `before(:all)` and `after(all)`, which run only once at the beginning and end of the test. Consider loading up the sample data once and reusing it in your tests whenever possible.
 
-## Test the API instead of the UI
+### Test the API instead of the UI
 
 <span id="avoid-ui"></span>
 
@@ -687,7 +690,7 @@ assertEquals(request.body.users.name, "John");
 
 Here we're testing that the API behaves according to the spec, and achieving the same thing as the test that went through the UI. This kind of test scales up much better because it uses fewer resources and can be more easily parallelized.
 
-## Reduce UI interactions during setup
+### Reduce UI interactions during setup
 
 <span id="reduce-ui"></span>
 
@@ -708,7 +711,7 @@ Feature: Checkout cart
     Then my order should be accepted
 ```
 
-**Cheating in the test**
+### Cheating in the test
 
 The scenario above calls for a shopping cart with products. This is a given precondition, but the test doesn’t care *how* the cart was filled. We can "cheat" and prefill the cart directly with a database query, which means that we don’t have to go through the UI. The point here is that **not everything needs to go through the UI**.
 
@@ -741,7 +744,7 @@ public class StepDefinitions {
 
 Testing frameworks have ways of reusing scenarios and conditions. Cucumber, for instance, has [backgrounds](https://cucumber.io/docs/gherkin/reference/#background). Time spent optimizing UI interactions is usually time well-spent.
 
-## Keep UI tests focused on the happy paths
+### Keep UI tests focused on the happy paths
 
 <span id="ui-tests"></span>
 
@@ -758,7 +761,7 @@ That doesn't mean that UI tests aren't valuable. We just need to be picky about 
 
 There are no hard and fast rules. Finding what works depends entirely on the nature of your application. Think about the primary user experience (the happy paths) and forget about edge cases — at least where UI testing is concerned.
 
-## Don’t neglect your tests
+### Don’t neglect your tests
 
 The importance of responsive tests cannot be overstated. Tests are code and should be treated with the same care. Time must be allocated to upkeep them because the speed of the test suite directly correlates to how often you can release software. A test suite will gradually slow down unless it is dutifully maintained, dragging the team's morale down and making your organization miss deadlines. Don’t let that happen!
 
