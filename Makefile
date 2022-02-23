@@ -5,7 +5,7 @@ PAPERS = what-is-blue-green-deployment \
 		cicd-continuous-integration-and-delivery-explained \
 		continuous-blue-green-deployments-with-kubernetes \
 		continuous-integration-explained \
-		5-step-strategy-for-optimizing-slow-test
+		a-complete-guide-to-making-your-slow-tests-fast
 
 PAPERDIR = papers
 BUILDDIR = build
