@@ -124,7 +124,7 @@ public void testSearchBoxShouldNotAcceptEmojis() {
     });
 
     String actualMessage = exception.getMessage();
-    String expectedMessage = "Sorry. Emojis are not supported in song names";
+    String expectedMessage = "Sorry. Emojis are not supported";
     assertTrue(actualMessage.contains(expectedMessage));
 };
 ```
@@ -146,7 +146,7 @@ Even the most general profiler tool will show you each statement's accumulated t
 Other profilers, such as [stackprof](https://github.com/tmm1/stackprof), trace everything that’s happening by line. These types of profilers usually need some instrumentation to be configured, as shown below:
 
 ``` ruby
-StackProf.run(mode: :cpu, out: 'tmp/stackprof-cpu-myapp.dump', raw: true) do
+StackProf.run(mode: :cpu, out: 'tmp/stackprof.dump', raw: true) do
     # code you want to profile here
 end
 ```
@@ -582,7 +582,8 @@ What’s the problem with this? At first glance, there’s nothing wrong: get al
 Databases, SQL databases in particular, are designed to work in sets. They hate iterations because every query has a large upfront processing cost. We can reduce the 10,001 queries to just 1 by requesting all the records in one go and taking advantage of the `JOIN` clause:
 
 ``` text
-users = db.exec("SELECT id, name, email FROM Users JOIN Emails ON Users.id = Emails.userid")
+users = db.exec("SELECT id, name, email FROM Users
+                JOIN Emails ON Users.id = Emails.userid")
 foreach user in users
 	body = "Hello $user['name']"
 	sendEmail(body, $user['email'])
@@ -628,7 +629,8 @@ INSERT INTO founders (name, surname) values ('Tom', 'Hall');
 Consider bundling the values into a single statement:
 
 ``` sql
-INSERT INTO founders (name, surname) values ('John', 'Romero'), ('John', 'Carmack'), ('Tom', 'Hall');
+INSERT INTO founders (name, surname) values
+  ('John', 'Romero'), ('John', 'Carmack'), ('Tom', 'Hall');
 ```
 
 Similarly useful devices exist when setting up a test through an ORM. Take this RSpec example:
@@ -718,7 +720,8 @@ The scenario above calls for a shopping cart with products. This is a given prec
 ``` java
 @Given("cart has products")
 public void cart_has_products() {
-    stmt.executeUpdate("INSERT INTO Cart (user_id,product_id) VALUES (1,1000), (1,2000), (1, 3000)");
+    stmt.executeUpdate("INSERT INTO Cart (user_id,product_id)
+                        VALUES (1,1000), (1,2000), (1, 3000)");
 }
 ```
 
@@ -736,7 +739,8 @@ public class StepDefinitions {
 
     @Then("my order should be accepted")
     public void i_should_get_order_number() {
-        assertNotNull(driver.findElement(By.xpath("//*[matches(@id, 'Your order number is \d+')]")));
+        assertNotNull(driver.findElement(
+            By.xpath("//*[matches(@id, 'Your order number is \d+')]")));
     }
 
 }
