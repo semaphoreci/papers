@@ -10,11 +10,13 @@ CPDF="${SCRIPT_DIR}/cpdf"
 TMP_DIR=$(mktemp -d)
 
 echo "script path is $SCRIPT_DIR"
+echo "temp dir is $TMP_DIR"
 
 for cover in "$COVER_DIR/"*.pdf; do
     echo "Adding cover $cover"
-    $CPDF "$cover" "$SOURCE_DIR/$cover" -o "$TMP_DIR"
+    fn=$(basename "$cover")
+    echo $CPDF "$cover" "$SOURCE_DIR/$fn" -o "$TMP_DIR/$fn"
 done
 
-mv "$TMP_DIR" "$SOURCE_DIR"
+mv "$TMP_DIR"/*.pdf "$SOURCE_DIR"
 rmdir "$TMP_DIR"
