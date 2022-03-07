@@ -2,6 +2,8 @@
 # Postprocess PDF to add cover page. This script overwrites the original PDFs.
 # Usage: add-covers.sh cover_dir source_dir
 
+set -e
+
 COVER_DIR=$1
 SOURCE_DIR=$2
 
@@ -15,7 +17,7 @@ echo "temp dir is $TMP_DIR"
 for cover in "$COVER_DIR/"*.pdf; do
     echo "Adding cover $cover"
     fn=$(basename "$cover")
-    echo $CPDF "$cover" "$SOURCE_DIR/$fn" -o "$TMP_DIR/$fn"
+    $CPDF "$cover" "$SOURCE_DIR/$fn" -o "$TMP_DIR/$fn"
 done
 
 mv "$TMP_DIR"/*.pdf "$SOURCE_DIR"
