@@ -23,12 +23,13 @@ Any images should be relative to this folder.
         cat footer.md >> papers/MY-AWESOME-PAPER.md
 
 3. Review the markdown file (see next section).
-4. Edit `Makefile` and add the new filename *without the extension or path* to the list in `PAPERS`:
+4. (Optional) Add a cover PDF into the `covers` dir. The filenames of the generated and cover PDF must match.
+5. Edit `Makefile` and add the new filename *without the extension or path* to the list in `PAPERS`:
 
         PAPERS = paper-1 paper-2 ... MY-AWESOME-PAPER
 
-5. Build all the PDFs: `make pdf`
-6. Output PDF is in: `build/pdf/MY-AWESOME-PAPER.pdf`
+6. Build all the PDFs: `make pdf`
+7. Output PDF is in: `build/pdf/MY-AWESOME-PAPER.pdf`
 
 ## Reviewing the markdown source
 
@@ -58,7 +59,7 @@ submitting PRs for improvements to explanations, code snippets, etc.
 
 ## Copyright & License
 
-Copyright © 2020 Rendered Text.
+Copyright © 2022 Rendered Text.
 
 This work is licensed under CC BY-NC-ND 4.0 <a href="https://creativecommons.org/licenses/by-nc-nd/4.0"><img height="16" style="margin-left: 3px;vertical-align:text-bottom;" src="https://search.creativecommons.org/static/img/cc_icon.svg" /><img height="16" style="margin-left: 3px;vertical-align:text-bottom;" src="https://search.creativecommons.org/static/img/cc-by_icon.svg" /><img height="16" style="margin-left: 3px;vertical-align:text-bottom;" src="https://search.creativecommons.org/static/img/cc-nc_icon.svg" /><img height="16" style="important;margin-left: 3px;vertical-align:text-bottom;" src="https://search.creativecommons.org/static/img/cc-nd_icon.svg" /></a>
 

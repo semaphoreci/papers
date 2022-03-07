@@ -12,6 +12,7 @@ blocks:
           commands:
             - checkout
             - make pdf
+            - ./bin/add-covers.sh covers build/pdf
             - for f in build/pdf/*.pdf; do artifact push workflow "$f"; done
             - cache store build-pdf-$SEMAPHORE_WORKFLOW_ID build/
 promotions:
