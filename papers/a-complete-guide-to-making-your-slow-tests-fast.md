@@ -787,11 +787,11 @@ The source text is open source:
 Originally published at:
 <https://semaphoreci.com/cicd>
 
-Authors: Tomas Fernandez (https://twitter.com/TomFernBlog)
+Authors: [Tomas Fernandez](https://twitter.com/TomFernBlog)
 
-Editor: Marko Anastasov (https://twitter.com/markoa)
+Editor: [Marko Anastasov](https://twitter.com/markoa)
 
-Reviewed by: Dan Ackerson (https://www.linkedin.com/in/danackerson/)
+Reviewed by: [Dan Ackerson](https://www.linkedin.com/in/danackerson/)
 
 Build date: __BUILD_MONTH__ __BUILD_YEAR__
 
