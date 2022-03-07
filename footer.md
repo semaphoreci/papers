@@ -16,7 +16,11 @@ Originally published at:
 
 Original publication date: YOUR PUB DATE
 
-Authors: YOUR AUTHORS
+Authors: AUTHORS
+
+Editor: EDITOR
+
+Reviewed by: REVIEWER
 
 Build date: __BUILD_MONTH__ __BUILD_YEAR__
 
