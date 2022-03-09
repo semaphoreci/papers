@@ -1,5 +1,5 @@
 ---
-title: A complete guide to making your slow tests fast
+title: A Complete Guide to Optimizing Slow Tests
 author-meta: Tomas Fernandez
 subtitle: semaphoreci.com
 rights:  Creative Commmons Attribution-NonCommercialNoDerivatives 4.0 International
