@@ -5,7 +5,8 @@ PAPERS = what-is-blue-green-deployment \
 		cicd-continuous-integration-and-delivery-explained \
 		continuous-blue-green-deployments-with-kubernetes \
 		continuous-integration-explained \
-		a-complete-guide-to-making-your-slow-tests-fast
+		a-complete-guide-to-making-your-slow-tests-fast \
+		canary-deployments
 
 PAPERDIR = papers
 BUILDDIR = build
@@ -31,7 +32,7 @@ $(BUILDDIR)/pdf/%.pdf: $(BUILDDIR)/md/%.md
 	mkdir -p $(BUILDDIR)/pdf
 	docker run --rm --volume `pwd`:/data -w /data pandoc/latex:2.10 \
 		--pdf-engine=xelatex \
-        -f markdown \
+		-f markdown \
 		-d pdf-options.yml \
 		--resource-path=$(PAPERDIR) \
 		-o /data/$@ $^
