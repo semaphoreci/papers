@@ -22,7 +22,7 @@ The opposite of the monorepo is *multirepo*, where each  project is held on an e
 
 Going from multi to monorepo is a matter of moving all your projects into a single repository.
 
-![Consolidating repositories into one](./public/what-is-monorepo/multi-to-mono.jpeg){ width = 70% }
+![Consolidating repositories into one](./public/what-is-monorepo/multi-to-mono.jpeg){ width=90% }
 
 Of course, this is just to get started. The hard work comes when we get into refactoring and consolidation.
 
@@ -157,7 +157,7 @@ For Pinterest, a monorepo layout provided a consistent development  workflow. Au
 
 If we have to take only one lesson from all these stories, it is that proper tooling is key for effective monorepos — building and testing  need to be rethought. Instead of rebuilding the complete repo on each  update, we can use smart build systems that understand project structure and act only in the parts that have changed since the last commit.
 
-![Build pipeline](./public/what-is-monorepo/build.jpg){ width = 90% }
+![Build pipeline](./public/what-is-monorepo/build.jpg){ width=90% }
 
 Most of us don’t have Google’s or Facebook’s resources. What can we  do? Fortunately, many of the bigger companies have open-sourced their  build systems:
 
