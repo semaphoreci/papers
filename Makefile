@@ -6,7 +6,8 @@ PAPERS = what-is-blue-green-deployment \
 		continuous-blue-green-deployments-with-kubernetes \
 		continuous-integration-explained \
 		a-complete-guide-to-making-your-slow-tests-fast \
-		canary-deployments
+		canary-deployments \
+		what-is-monorepo
 
 PAPERDIR = papers
 BUILDDIR = build
