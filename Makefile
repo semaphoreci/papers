@@ -7,7 +7,10 @@ PAPERS = what-is-blue-green-deployment \
 		continuous-integration-explained \
 		a-complete-guide-to-making-your-slow-tests-fast \
 		canary-deployments \
-		what-is-monorepo
+		what-is-monorepo \
+		stubbing-and-mocking-with-mockito
+
+# PAPERS = stubbing-and-mocking-with-mockito
 
 PAPERDIR = papers
 BUILDDIR = build
