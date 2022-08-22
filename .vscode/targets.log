@@ -1,0 +1,303 @@
+# GNU Make 3.81
+# Copyright (C) 2006  Free Software Foundation, Inc.
+# This is free software; see the source for copying conditions.
+# There is NO warranty; not even for MERCHANTABILITY or FITNESS FOR A
+# PARTICULAR PURPOSE.
+
+# This program built for i386-apple-darwin11.3.0
+
+# Make data base, printed on Mon Aug 22 19:35:32 2022
+
+# Variables
+
+# automatic
+<D = $(patsubst %/,%,$(dir $<))
+# automatic
+?F = $(notdir $?)
+# makefile (from `Makefile', line 22)
+REVISION = $(shell git rev-parse --short HEAD)
+# environment
+LC_CTYPE = en_US.UTF-8
+# environment
+NVM_INC = /Users/tom/.nvm/versions/node/v14.15.0/include/node
+# automatic
+?D = $(patsubst %/,%,$(dir $?))
+# automatic
+@D = $(patsubst %/,%,$(dir $@))
+# automatic
+@F = $(notdir $@)
+# makefile
+CURDIR := /Users/tom/r/papers
+# makefile
+SHELL = /bin/sh
+# environment
+VSCODE_NLS_CONFIG = {"locale":"en-us","availableLanguages":{},"_languagePackSupport":true}
+# environment
+_ = /usr/bin/make
+# makefile (from `Makefile', line 1)
+MAKEFILE_LIST :=  Makefile
+# makefile (from `Makefile', line 19)
+BUILDDIR = build
+# environment
+LC_COLLATE = en_US.UTF-8
+# environment
+__CFBundleIdentifier = com.microsoft.VSCode
+# environment
+INFOPATH = /opt/homebrew/share/info:/opt/homebrew/share/info:/opt/homebrew/share/info:
+# environment
+VSCODE_CWD = /
+# environment
+PATH = /Users/tom/.asdf/shims:/opt/homebrew/opt/asdf/libexec/bin:/Users/tom/.nvm/versions/node/v14.15.0/bin:/Users/tom/.deno/bin:/Users/tom/.bun/bin:/opt/homebrew/opt/php@7.4/bin:/opt/homebrew/opt/php@7.4/sbin:/opt/homebrew/bin:/opt/homebrew/sbin:/Users/tom/dotfiles/bin:/usr/local/bin:/Users/tom/.nvm/versions/node/v14.15.0/bin:/Users/tom/.deno/bin:/Users/tom/.bun/bin:/opt/homebrew/opt/php@7.4/bin:/opt/homebrew/opt/php@7.4/sbin:/opt/homebrew/bin:/opt/homebrew/sbin:/Users/tom/dotfiles/bin:/usr/local/bin:/Users/tom/.nvm/versions/node/v14.15.0/bin:/Users/tom/.deno/bin:/Users/tom/.bun/bin:/opt/homebrew/opt/php@7.4/bin:/opt/homebrew/opt/php@7.4/sbin:/opt/homebrew/bin:/opt/homebrew/sbin:/Users/tom/dotfiles/bin:/usr/local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Applications/VMware Fusion Tech Preview.app/Contents/Public:/Library/Apple/usr/bin:/Users/tom/.fig/bin:/Users/tom/.local/bin
+# makefile (from `Makefile', line 20)
+YEAR = $(shell date +'%Y')
+# environment
+LSCOLORS = Gxfxcxdxbxegedabagacad
+# makefile (from `Makefile', line 21)
+MONTH = $(shell date +'%b')
+# environment
+NVM_BIN = /Users/tom/.nvm/versions/node/v14.15.0/bin
+# environment
+ELECTRON_RUN_AS_NODE = 1
+# default
+.FEATURES := target-specific order-only second-expansion else-if archives jobserver check-symlink
+# environment
+SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.k3Ye0MbiUW/Listeners
+# automatic
+%F = $(notdir $%)
+# environment
+_JAVA_OPTIONS = -Dawt.useSystemAAFontSettings=gasp
+# environment
+TTY = not a tty
+# environment
+FIG_PID = 15703
+# environment
+PWD = /Users/tom/r/papers
+# environment
+HOMEBREW_CELLAR = /opt/homebrew/Cellar
+# environment
+ORIGINAL_XDG_CURRENT_DESKTOP = undefined
+# environment
+MANPATH = /opt/homebrew/share/man:/opt/homebrew/share/man:/Users/tom/.nvm/versions/node/v14.15.0/share/man:/opt/homebrew/share/man::::
+# environment
+VSCODE_AMD_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
+# environment
+HOME = /Users/tom
+# default
+MAKEFILEPATH = $(shell /usr/bin/xcode-select -print-path 2>/dev/null || echo /Developer)/Makefiles
+# environment
+VSCODE_CODE_CACHE_PATH = /Users/tom/Library/Application Support/Code/CachedData/6d9b74a70ca9c7733b29f0456fd8195364076dda
+# environment
+LOGNAME = tom
+# environment
+APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = true
+# environment
+NVM_CD_FLAGS = -q
+# automatic
++F = $(notdir $+)
+# environment
+ZSH = /Users/tom/.oh-my-zsh
+# environment
+VSCODE_HANDLES_UNCAUGHT_ERRORS = true
+# automatic
+^D = $(patsubst %/,%,$(dir $^))
+# environment
+LC_TIME = en_US.UTF-8
+# environment
+XPC_FLAGS = 0x0
+# default
+MAKE = $(MAKE_COMMAND)
+# default
+MAKECMDGOALS := all
+# environment
+GPG_AGENT_INFO_FILE = /Users/tom/.gnupg/gpg-agent-info
+# environment
+SHLVL = 1
+# default
+MAKE_VERSION := 3.81
+# environment
+USER = tom
+# makefile
+.DEFAULT_GOAL := pdf
+# makefile (from `Makefile', line 18)
+PAPERDIR = papers
+# environment
+LESS = -R
+# automatic
+%D = $(patsubst %/,%,$(dir $%))
+# default
+MAKE_COMMAND := /Library/Developer/CommandLineTools/usr/bin/make
+# default
+.VARIABLES := 
+# environment
+TMPDIR = /var/folders/bc/hmlryc3911n_nw9qsyb2rz8h0000gn/T/
+# automatic
+*F = $(notdir $*)
+# environment
+VSCODE_IPC_HOOK = /Users/tom/Library/Application Support/Code/1.70.1-main.sock
+# environment
+MallocNanoZone = 0
+# environment
+BUN_INSTALL = /Users/tom/.bun
+# makefile (from `Makefile', line 16)
+PAPERS = dockerizing-php
+# makefile
+MAKEFLAGS = Rrqp
+# environment
+MFLAGS = -Rrqp
+# automatic
+*D = $(patsubst %/,%,$(dir $*))
+# environment
+NVM_DIR = /Users/tom/.nvm
+# environment
+XPC_SERVICE_NAME = application.com.microsoft.VSCode.32260368.32260374
+# environment
+HOMEBREW_PREFIX = /opt/homebrew
+# automatic
++D = $(patsubst %/,%,$(dir $+))
+# environment
+BROWSER = firefox
+# environment
+DENO_INSTALL = /Users/tom/.deno
+# environment
+S_COLORS = auto
+# environment
+HOMEBREW_REPOSITORY = /opt/homebrew
+# environment
+__CF_USER_TEXT_ENCODING = 0x1F5:0x0:0x0
+# environment
+COMMAND_MODE = unix2003
+# default
+MAKEFILES := 
+# automatic
+<F = $(notdir $<)
+# environment
+EDITOR = vim
+# environment
+PAGER = less
+# environment
+LC_ALL = C
+# automatic
+^F = $(notdir $^)
+# default
+SUFFIXES := 
+# environment
+ASDF_DIR = /opt/homebrew/opt/asdf/libexec
+# environment
+MAKELEVEL := 0
+# environment
+LANG = C
+# environment
+VSCODE_PID = 15688
+# variable set hash-table stats:
+# Load=89/1024=9%, Rehash=0, Collisions=3/118=3%
+
+# Pattern-specific Variable Values
+
+# No pattern-specific variable values.
+
+# Directories
+
+# . (device 16777231, inode 9103857): 16 files, no impossibilities.
+# build/md (device 16777231, inode 32619306): No files, no impossibilities so far.
+# papers (device 16777231, inode 9103961): No files, no impossibilities so far.
+
+# 16 files, no impossibilities in 3 directories.
+
+# Implicit Rules
+
+build/md/%.md: papers/%.md
+#  commands to execute (from `Makefile', line 34):
+	mkdir -p $(BUILDDIR)/md
+	sed -e "s/__BUILD_MONTH__/${MONTH}/g;s/__BUILD_YEAR__/${YEAR}/g;s/__BUILD_REVISION__/${REVISION}/g" $< > $@
+	
+
+build/pdf/%.pdf: build/md/%.md
+#  commands to execute (from `Makefile', line 39):
+	mkdir -p $(BUILDDIR)/pdf
+	docker run --rm --volume `pwd`:/data -w /data pandoc/latex:2.10 \
+	--pdf-engine=xelatex \
+	-f markdown \
+	-d pdf-options.yml \
+	--resource-path=$(PAPERDIR) \
+	-o /data/$@ $^
+	
+
+# 2 implicit rules, 0 (0.0%) terminal.
+
+# Files
+
+pdf: build/pdf/dockerizing-php.pdf
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+# Not a target:
+all:
+#  Command-line target.
+#  Implicit rule search has been done.
+#  File does not exist.
+#  File has not been updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+.PHONY: pdf clean
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+.SUFFIXES:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+Makefile:
+#  Implicit rule search has been done.
+#  Last modified 2022-08-22 19:34:53
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+# Not a target:
+.DEFAULT:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+build/pdf/dockerizing-php.pdf:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+clean:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 30):
+	rm -rf $(BUILDDIR)
+	
+
+# files hash-table stats:
+# Load=8/1024=1%, Rehash=0, Collisions=0/23=0%
+# VPATH Search Paths
+
+# No `vpath' search paths.
+
+# No general (`VPATH' variable) search path.
+
+# # of strings in strcache: 1
+# # of strcache buffers: 1
+ 
+make: *** No rule to make target `all'.  Stop.
+
+# strcache size: total = 4096 / max = 4096 / min = 4096 / avg = 4096
+# strcache free: total = 4087 / max = 4087 / min = 4087 / avg = 4087
+
+# Finished Make data base on Mon Aug 22 19:35:32 2022
+
+ 

@@ -13,7 +13,7 @@ PAPERS = what-is-blue-green-deployment \
 		testing-python-with-pytest \
 		dockerizing-django
 
-#PAPERS = dockerizing-django
+PAPERS = dockerizing-php
 
 PAPERDIR = papers
 BUILDDIR = build
