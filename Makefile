@@ -7,7 +7,12 @@ PAPERS = what-is-blue-green-deployment \
 		continuous-integration-explained \
 		a-complete-guide-to-making-your-slow-tests-fast \
 		canary-deployments \
-		what-is-monorepo
+		what-is-monorepo \
+		stubbing-and-mocking-with-mockito \
+		cicd-interview \
+		pytest
+
+# PAPERS = pytest
 
 PAPERDIR = papers
 BUILDDIR = build
