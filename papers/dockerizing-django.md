@@ -247,8 +247,7 @@ Setting up a CI/CD [pipeline](https://semaphoreci.com/blog/cicd-pipeline) in Sem
 
 -   Click on **Choose** next to your repository:
 
-![](./public/dockerizing-django/CleanShot-2022-05-03-at-10.19.14@2x-2-1056x395-1.jpg)
-
+![](./public/dockerizing-django/CleanShot-2022-05-04-at-10.18.49@2x-1056x393-1.jpg)
 
 
 -   Click on **Continue to workflow setup**.
