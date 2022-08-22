@@ -8,9 +8,10 @@ PAPERS = what-is-blue-green-deployment \
 		a-complete-guide-to-making-your-slow-tests-fast \
 		canary-deployments \
 		what-is-monorepo \
-		stubbing-and-mocking-with-mockito
+		stubbing-and-mocking-with-mockito \
+		cicd-interview
 
-# PAPERS = stubbing-and-mocking-with-mockito
+# PAPERS = cicd-interview
 
 PAPERDIR = papers
 BUILDDIR = build
