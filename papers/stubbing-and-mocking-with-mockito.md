@@ -6,8 +6,6 @@ rights:  Creative Commmons Attribution-NonCommercialNoDerivatives 4.0 Internatio
 language: en-US
 ...
 
-# Stubbing and Mocking with Mockito and JUnit
-
 Mocking and stubbing are the cornerstones of having quick and simple unit tests. Mocks are useful if you have a dependency on an external system, file reading takes too long, the database connection is unreliable, or if you don’t want to send an email after every test.
 
 Unlike with integration or functional tests, [where the real system is being tested as a whole](https://semaphoreci.com/blog/automated-testing-cicd), unit tests should focus on a single class. Everything else should be either a simple class or a mock. [Mockito](http://site.mockito.org/) now seems to be the dominant Mocking framework in Java, and is now in its second version. [Spock](http://spockframework.org/) is also a great solution that we will explore in a future article.

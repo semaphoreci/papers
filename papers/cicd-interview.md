@@ -6,8 +6,6 @@ rights:  Creative Commmons Attribution-NonCommercialNoDerivatives 4.0 Internatio
 language: en-US
 ...
 
-# 30 Common CI/CD Interview Questions (with Answers)
-
 Acing a software engineering interview is all about preparation. Preparation starts with collecting as much information as you can about the prospective company, and their history, product, and [interviewing process](https://semaphoreci.com/blog/interviewing-engineers-at-semaphore).
 
 Next in the list is to brush up your technical skills because knowing your technical stuff will make you stand out. Questions (like the ones in this article) are a great way of testing your knowledge. To help you, we’ve collected and answered 30 common CI/CD-related questions. How many can you answer?

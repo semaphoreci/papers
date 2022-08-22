@@ -9,9 +9,10 @@ PAPERS = what-is-blue-green-deployment \
 		canary-deployments \
 		what-is-monorepo \
 		stubbing-and-mocking-with-mockito \
-		cicd-interview
+		cicd-interview \
+		pytest
 
-# PAPERS = cicd-interview
+# PAPERS = pytest
 
 PAPERDIR = papers
 BUILDDIR = build
