@@ -10,9 +10,10 @@ PAPERS = what-is-blue-green-deployment \
 		what-is-monorepo \
 		stubbing-and-mocking-with-mockito \
 		cicd-interview \
-		pytest
+		testing-python-with-pytest \
+		dockerizing-django
 
-# PAPERS = pytest
+#PAPERS = dockerizing-django
 
 PAPERDIR = papers
 BUILDDIR = build
