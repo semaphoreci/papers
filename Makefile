@@ -1,24 +1,24 @@
 # Add your markdown sources here
 # (do not include path or file extension)
-PAPERS = what-is-blue-green-deployment \
-		cicd-pipeline-a-gentle-introduction \
-		cicd-continuous-integration-and-delivery-explained \
-		continuous-blue-green-deployments-with-kubernetes \
-		continuous-integration-explained \
-		a-complete-guide-to-making-your-slow-tests-fast \
-		canary-deployments \
-		what-is-monorepo \
-		stubbing-and-mocking-with-mockito \
-		cicd-interview \
-		testing-python-with-pytest \
-		dockerizing-django
+# PAPERS = what-is-blue-green-deployment \
+# 		cicd-pipeline-a-gentle-introduction \
+# 		cicd-continuous-integration-and-delivery-explained \
+# 		continuous-blue-green-deployments-with-kubernetes \
+# 		continuous-integration-explained \
+# 		a-complete-guide-to-making-your-slow-tests-fast \
+# 		canary-deployments \
+# 		what-is-monorepo \
+# 		stubbing-and-mocking-with-mockito \
+# 		cicd-interview \
+# 		testing-python-with-pytest \
+# 		dockerizing-django
 
 # PAPERS = stubbing-and-mocking-with-mockito \
 # 		cicd-interview \
 # 		testing-python-with-pytest \
 # 		dockerizing-django
 
-# PAPERS = dockerizing-php
+PAPERS = java-with-spock
 
 PAPERDIR = papers
 BUILDDIR = build
