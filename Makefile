@@ -13,7 +13,8 @@ PAPERS = what-is-blue-green-deployment \
 		testing-python-with-pytest \
 		dockerizing-django \
 		java-with-spock \
-		a-first-look-at-bun
+		a-first-look-at-bun \
+		building-rest-api-go-and-mux
 
 # PAPERS = stubbing-and-mocking-with-mockito \
 # 		cicd-interview \
