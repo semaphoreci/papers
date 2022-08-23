@@ -355,17 +355,17 @@ Follow these steps to add the project to Semaphore:
     -   **Pytest**: for testing simple Python 3.x projects.
     -   **Python package**: for testing packages simultaneously on multiple 2.x and 3.x Python versions.
 
-![img](./public/pytest/Screenshot2.jpg)Choose a starter workflow
+![Choose a starter workflow](./public/pytest/Screenshot2.jpg)
 
 -   The [CI pipeline](https://semaphoreci.com/blog/cicd-pipeline) starts immediately:
 
-![img](./public/pytest/Screenshot3-1.jpg)Pipeline running
+![Pipeline running](./public/pytest/Screenshot3-1.jpg)
 
 In a few simple steps, we’ve set up continuous testing.
 
 At any time, you can click on the job to see the error logs and messages. Semaphore also has [Test Reports](https://semaphoreci.com/blog/test-reports). This feature allows you to see which tests have failed, find the slowest tests in your test suite, and find skipped test on the convenient Tests dashboard.
 
-![img](./public/pytest/Screenshot4-1-1024x523-1.jpg)Job error log and messages
+![Job error log and messages](./public/pytest/Screenshot4-1-1024x523-1.jpg)
 
 ### Summary
 

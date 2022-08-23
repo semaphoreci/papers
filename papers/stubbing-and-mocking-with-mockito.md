@@ -703,15 +703,15 @@ In this section, we’ll create an initial [pipeline](https://semaphoreci.com/bl
 
 -   Go to your Semaphore account. Click on the **Add Project** to add your repositoryChoose your repository from the list:
 
-![img](public/stubbing-and-mocking-with-mockito/choose.jpeg)Add your project to Semaphore
+![Add your project to Semaphore](public/stubbing-and-mocking-with-mockito/choose.jpeg)
 
 -   As a Starter Workflow, select **Maven** and click on the **Run this Workflow** button:
 
-![img](public/stubbing-and-mocking-with-mockito/start-with-maven.jpeg)Select an initial workflow
+![Select an initial workflow](public/stubbing-and-mocking-with-mockito/start-with-maven.jpeg)
 
 -   The initial pipeline starts immediately:
 
-![img](public/stubbing-and-mocking-with-mockito/first-maven-ci-1.jpeg)Initial run
+![Initial run](public/stubbing-and-mocking-with-mockito/first-maven-ci-1.jpeg)
 
 #### Build Job
 
@@ -719,7 +719,7 @@ We need to customize the starter workflow to [build the application in the CI en
 
 -   Click on the **Edit Workflow** button on the top-right corner toopen the **Workflow Editor**:
 
-![img](public/stubbing-and-mocking-with-mockito/block-and-jobs.jpeg)The Workflow Builder UI
+![The Workflow Builder UI](public/stubbing-and-mocking-with-mockito/block-and-jobs.jpeg)
 
 Semaphore CI/CD combines the following elements:
 
@@ -747,7 +747,7 @@ The [sem-version](https://docs.semaphoreci.com/ci-cd-environment/sem-version-man
 
 -   Semaphore begins building the application:
 
-![img](public/stubbing-and-mocking-with-mockito/ci-1.jpeg)Build job complete
+![Build job complete](public/stubbing-and-mocking-with-mockito/ci-1.jpeg)
 
 #### Speeding up the build
 
@@ -776,7 +776,7 @@ cache store
 
 -   Click on **Run the Workflow** and **Start**:
 
-![img](public/stubbing-and-mocking-with-mockito/Screenshot43.jpeg)
+![](public/stubbing-and-mocking-with-mockito/Screenshot43.jpeg)
 
 Now, the downloaded packages are preserved in the cache. As a result, the build job a lot less time.
 
@@ -787,7 +787,7 @@ Now that we are happy with the build job, let’s add a test block:
 -   Click on **Edit the Workflow**.
 -   Click the **+Add Block** dotted box:
 
-![img](public/stubbing-and-mocking-with-mockito/Screenshot46-1.jpeg)Add a block
+![Add a block](public/stubbing-and-mocking-with-mockito/Screenshot46-1.jpeg)
 
 -   Name the second block “Tests” and the job “Unit tests”.
 -   Type the Maven test in the command box: `mvn test`
@@ -803,11 +803,11 @@ Commands in the [prologue](https://docs.semaphoreci.com/reference/pipeline-yaml-
 
 -   Once more, open the **Environment Variables** section and add the same `MAVEN_OPTS` variable as last time.
 
-![img](public/stubbing-and-mocking-with-mockito/Screenshot44.jpeg)
+![](public/stubbing-and-mocking-with-mockito/Screenshot44.jpeg)
 
 -   **Run the Workflow** to test the pipeline:
 
-![img](public/stubbing-and-mocking-with-mockito/ci-3.jpeg)
+![](public/stubbing-and-mocking-with-mockito/ci-3.jpeg)
 
 With this simple CI pipeline, from now on, your code is tested on each push.
 

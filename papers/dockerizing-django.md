@@ -122,7 +122,9 @@ $ python manage.py runserver
 If you check the output of the previous command, you’ll see this message:
 
 ```
-You have 18 unapplied migration(s). Your project may not work properly until you apply the migrations for app(s): admin, auth, contenttypes, sessions.
+You have 18 unapplied migration(s). Your project may not work 
+properly until you apply the migrations for app(s): admin, 
+auth, contenttypes, sessions.
 Run 'python manage.py migrate' to apply them.
 ```
 
@@ -241,10 +243,7 @@ With an initial application and [some tests in place](https://semaphoreci.com/bl
 Setting up a CI/CD [pipeline](https://semaphoreci.com/blog/cicd-pipeline) in Semaphore takes only a few minutes, once it’s in place it, Semaphore will run the tests for you on every update and, if there are no bugs,  build the Docker image automatically.
 
 -   Visit [Semaphore](https://semaphoreci.com) and sign up for a free account using the **Sign up with GitHub** button.
--   Use the **+ (plus sign)** button next to **Projects** to find your GitHub repository:
-
-![img](https://wpblog.semaphoreci.com/wp-content/uploads/2022/05/CleanShot-2022-05-03-at-10.19.14@2x-2-1056x395-1.jpg)
-
+-   Click on **Create new** to add your project from the Git repository.
 -   Click on **Choose** next to your repository:
 
 ![](./public/dockerizing-django/CleanShot-2022-05-04-at-10.18.49@2x-1056x393-1.jpg)
@@ -253,11 +252,11 @@ Setting up a CI/CD [pipeline](https://semaphoreci.com/blog/cicd-pipeline) in Sem
 -   Click on **Continue to workflow setup**.
 -   Select the single job templante and click on **Customize it first**
 
-![img](./public/dockerizing-django/CleanShot-2022-05-04-at-10.24.19@2x-1056x808-1.jpg)
+![Customize workflow](./public/dockerizing-django/CleanShot-2022-05-04-at-10.24.19@2x-1056x808-1.jpg)
 
 This will open the **Workflow Builder**:
 
-![img](./public/dockerizing-django/CleanShot-2022-05-04-at-10.25.17@2x-1056x548-1.png)
+![Builder UI overview](./public/dockerizing-django/CleanShot-2022-05-04-at-10.25.17@2x-1056x548-1.png)
 
 The main elements of the builder are:
 
@@ -280,13 +279,13 @@ pip install --cache-dir .pip_cache -r requirements.txt
 cache store
 ```
 
-![img](./public/dockerizing-django/CleanShot-2022-05-04-at-14.39.27@2x-1056x591-1.jpg)Build job
+![Build job](./public/dockerizing-django/CleanShot-2022-05-04-at-14.39.27@2x-1056x591-1.jpg)
 
 -   Click on **Run the Workflow**.
 -   Set the branch to **master**.
 -   Click on **Start**.
 
-![img](./public/dockerizing-django/CleanShot-2022-05-04-at-14.39.53@2x-1056x499-1.jpg)Save your changes
+![Save your changes](./public/dockerizing-django/CleanShot-2022-05-04-at-14.39.53@2x-1056x499-1.jpg)
 
 We have three commands in Semaphore’s built-in [toolbox](https://docs.semaphoreci.com/reference/toolbox-reference/):
 
@@ -330,11 +329,11 @@ pip install flake8
 flake8 martor_demo/ --max-line-length=127
 ```
 
-![img](https://wpblog.semaphoreci.com/wp-content/uploads/2022/05/CleanShot-2022-05-04-at-14.38.35@2x-1056x577-1.jpg)Test block
+![Test block](https://wpblog.semaphoreci.com/wp-content/uploads/2022/05/CleanShot-2022-05-04-at-14.38.35@2x-1056x577-1.jpg)
 
 1.  Click on **Run the Workflow** and **Start:**
 
-![img](./public/dockerizing-django/CleanShot-2022-05-04-at-14.40.25@2x-1.jpg)CI pipeline
+![CI pipeline](./public/dockerizing-django/CleanShot-2022-05-04-at-14.40.25@2x-1.jpg){ width=60% }
 
 ## Dockerizing the Application
 
@@ -394,10 +393,16 @@ Create a server startup script called `start-server.sh`. This is a Bash script t
 ```bash
 #!/usr/bin/env bash
 # start-server.sh
-if [ -n "$DJANGO_SUPERUSER_USERNAME" ] && [ -n "$DJANGO_SUPERUSER_PASSWORD" ] ; then
+if [ -n "$DJANGO_SUPERUSER_USERNAME" ] \
+   && [ -n "$DJANGO_SUPERUSER_PASSWORD" ] ; then
     (cd martor_demo; python manage.py createsuperuser --no-input)
 fi
-(cd martor_demo; gunicorn martor_demo.wsgi --user www-data --bind 0.0.0.0:8010 --workers 3) &
+( cd martor_demo; \
+  gunicorn martor_demo.wsgi \
+       --user www-data \
+       --bind 0.0.0.0:8010 \
+       --workers 3 \
+) &
 nginx -g "daemon off;"
 ```
 
@@ -543,14 +548,14 @@ You’ll need a Docker Hub login to continue:
 1.  Head to [Docker Hub](https://hub.docker.com).
 2.  Use the **Get Started** button to register.
 3.  Go back to your **Semaphore** account.
-4.  On the left navigation menu, click on **Secrets** under **Configuration**:
+4.  On the left navigation menu, click on **Settings** under your organization's menu.
 
-![img](./public/dockerizing-django/CleanShot-2022-05-03-at-09.12.53@2x-2-1.jpg){ width=45% }
+![](./public/dockerizing-django/CleanShot-2022-05-03-at-09.12.53@2x-2-1.jpg){ width=35% }
 
 1.  Click on **Create** **New Secret**.
 2.  Create a secret called “dockerhub” with the username and password of your Docker Hub account:
 
-![img](./public/dockerizing-django/CleanShot-2022-05-03-at-09.15.45@2x-2-1056x731-1.jpg){ width=75% }Saving the Docker Hub password
+![Saving the Docker Hub password](./public/dockerizing-django/CleanShot-2022-05-03-at-09.15.45@2x-2-1056x731-1.jpg){ width=75% }
 
 1.  Click on **Save** **Secret**.
 
@@ -589,11 +594,11 @@ docker push $DOCKER_USERNAME/django-markdown-editor:latest
 1.  In the **Secrets** section, check the **dockerhub** secret
 2.  Click on **Run the workflow** and **Start**.
 
-![img](./public/dockerizing-django/CleanShot-2022-05-04-at-14.53.56@2x-1056x436-1.jpg)The final pipeline
+![The final pipeline](./public/dockerizing-django/CleanShot-2022-05-04-at-14.53.56@2x-1056x436-1.jpg)
 
 The CI/CD pipelines start automatically. Once all tests pass, the  Dockerize pipeline will create a new Docker image and push it to Docker  Hub.
 
-![img](./public/dockerizing-django/CleanShot-2022-05-04-at-14.43.13@2x-1056x411-1.jpg)Dockerized application
+![Dockerized application](./public/dockerizing-django/CleanShot-2022-05-04-at-14.43.13@2x-1056x411-1.jpg)
 
 You can pull the image to your machine and run it as usual:
 
