@@ -12,12 +12,12 @@ PAPERS = what-is-blue-green-deployment \
 		cicd-interview \
 		testing-python-with-pytest \
 		dockerizing-django \
+		dockerizing-php \
 		java-with-spock \
 		a-first-look-at-bun \
 		building-rest-api-go-and-mux \
-		dockerizing-nodejs
-
-# PAPERS = deploy-go-web
+		dockerizing-nodejs \
+		deploy-go-web
 
 PAPERDIR = papers
 BUILDDIR = build
