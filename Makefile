@@ -11,14 +11,13 @@ PAPERS = what-is-blue-green-deployment \
 		stubbing-and-mocking-with-mockito \
 		cicd-interview \
 		testing-python-with-pytest \
-		dockerizing-django
+		dockerizing-django \
+		java-with-spock \
+		a-first-look-at-bun \
+		building-rest-api-go-and-mux \
+		dockerizing-nodejs
 
-# PAPERS = stubbing-and-mocking-with-mockito \
-# 		cicd-interview \
-# 		testing-python-with-pytest \
-# 		dockerizing-django
-
-# PAPERS = dockerizing-php
+# PAPERS = deploy-go-web
 
 PAPERDIR = papers
 BUILDDIR = build

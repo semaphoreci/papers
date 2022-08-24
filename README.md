@@ -16,34 +16,28 @@ latest version of source text. See [project on Semaphore][semaphore-project].
 
 ## How to add a paper
 
-1. Copy the original source file in markdown and related images into the `papers/` folder.
-Any images should be relative to this folder.
-2. Append the contents of `footer.md` to the markdown file:
+1. Copy the original source file in markdown to the `tmp/` folder.
+2. Copy any related images into the `papers/` folder. Any images in the markdown source should be relative to this folder.
+3. Add the header contents of `header.md` to the markdown file. The header must contain [valid metadata](https://pandoc.org/MANUAL.html#metadata-variables):
+
+        cat header.md tmp/MY-AWESOME-PAPER.md > papers/MY-AWESOME-PAPER.md
+
+4. Append the contents of `footer.md` to the markdown file:
 
         cat footer.md >> papers/MY-AWESOME-PAPER.md
 
-3. Review the markdown file (see next section).
-4. (Optional) Add a cover PDF into the `covers` dir. The filenames of the generated and cover PDF must match.
-5. Edit `Makefile` and add the new filename *without the extension or path* to the list in `PAPERS`:
+5. Review the markdown file (see next section).
+6. (Optional) Add a cover PDF into the `covers` dir. The filenames of the generated and cover PDF must match.
+7. Edit `Makefile` and add the new filename *without the extension or path* to the list in `PAPERS`:
 
         PAPERS = paper-1 paper-2 ... MY-AWESOME-PAPER
 
-6. Build all the PDFs: `make pdf`
-7. Output PDF is in: `build/pdf/MY-AWESOME-PAPER.pdf`
+8. Build all the PDFs: `make pdf`
+9. Output PDF is in: `build/pdf/MY-AWESOME-PAPER.pdf`
 
 ## Reviewing the markdown source
 
 Open the markdown file and check the following:
-
-- Add a title and other [valid metadata](https://pandoc.org/MANUAL.html#metadata-variables) at the beginning.
-
-        ---
-        title: YOUR TITLE
-        author-meta: YOUR AUTHOR
-        subtitle: semaphoreci.com
-        rights:  Creative Commmons Attribution-NonCommercialNoDerivatives 4.0 International
-        language: en-US
-        ...
 
 - Adjust the size of the images: add `{ width=100% }` at the end of the line and tweak the width as needed.
 
