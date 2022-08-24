@@ -17,7 +17,7 @@ PAPERS = what-is-blue-green-deployment \
 		building-rest-api-go-and-mux \
 		dockerizing-nodejs
 
-# PAPERS = dockerizing-nodejs
+# PAPERS = deploy-go-web
 
 PAPERDIR = papers
 BUILDDIR = build
