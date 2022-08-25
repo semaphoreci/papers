@@ -17,7 +17,9 @@ PAPERS = what-is-blue-green-deployment \
 		a-first-look-at-bun \
 		building-rest-api-go-and-mux \
 		dockerizing-nodejs \
-		deploy-go-web
+		deploy-go-web \
+		ios-cicd \
+		5-options-to-deploy-microservices
 
 PAPERDIR = papers
 BUILDDIR = build
