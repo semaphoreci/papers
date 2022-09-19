@@ -1,6 +1,6 @@
 \newpage
 
-# Download the full guide for free
+# Download the full guide
 
 We hope you have enjoyed this small sample of the guide. 
 
