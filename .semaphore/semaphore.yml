@@ -27,7 +27,7 @@ blocks:
             - artifact pull workflow uploads
             - '#cache restore build-pdf-$SEMAPHORE_WORKFLOW_ID'
             - gs -sDEVICE=pdfwrite -dPrinted=false -dNOPAUSE -dBATCH -dSAFER -dFirstPage=2 -dLastPage=6 -sOutputFile=a-complete-guide-to-making-your-slow-tests-fast-6pages.pdf uploads/a-complete-guide-to-making-your-slow-tests-fast.pdf
-            - ./bin/cpdf cover/a-complete-guide-to-making-your-slow-tests-fast-sample.pdf a-complete-guide-to-making-your-slow-tests-fast-6pages.pdf uploads/a-complete-guide-to-making-your-slow-tests-fast-more.pdf -o uploads/a-complete-guide-to-making-your-slow-tests-fast-sample.pdf
+            - ./bin/cpdf covers/a-complete-guide-to-making-your-slow-tests-fast-sample.pdf a-complete-guide-to-making-your-slow-tests-fast-6pages.pdf uploads/a-complete-guide-to-making-your-slow-tests-fast-more.pdf -o uploads/a-complete-guide-to-making-your-slow-tests-fast-sample.pdf
             - artifact push workflow --force uploads
 promotions:
   - name: Publish
