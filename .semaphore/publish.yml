@@ -12,6 +12,9 @@ blocks:
       jobs:
         - name: Upload files
           commands:
-            - cache restore build-pdf-$SEMAPHORE_WORKFLOW_ID
-            - cd build/pdf
+            - artifact pull workflow uploads
+            - cd uploads
             - 'for f in *.pdf; do echo "put ''$f''" | sshpass -p "$FTP_PASSWORD" sftp -P $FTP_PORT -o StrictHostKeyChecking=no $FTP_USER@$FTP_HOST:/wp-content/uploads/pdf-downloads; done'
+            - '#cache restore build-pdf-$SEMAPHORE_WORKFLOW_ID'
+            - '#cd build/pdf'
+            - '#for f in *.pdf; do echo "put ''$f''" | sshpass -p "$FTP_PASSWORD" sftp -P $FTP_PORT -o StrictHostKeyChecking=no $FTP_USER@$FTP_HOST:/wp-content/uploads/pdf-downloads; done'

@@ -13,8 +13,22 @@ blocks:
             - checkout
             - make pdf
             - ./bin/add-covers.sh covers build/pdf
-            - for f in build/pdf/*.pdf; do artifact push workflow "$f"; done
+            - mkdir -p uploads
+            - cp build/pdf/*.pdf uploads
+            - '# for f in build/pdf/*.pdf; do artifact push workflow "$f"; done'
+            - artifact push workflow uploads
             - cache store build-pdf-$SEMAPHORE_WORKFLOW_ID build/
+  - name: Make samples (PDF)
+    task:
+      jobs:
+        - name: Guide sample
+          commands:
+            - checkout
+            - artifact pull workflow uploads
+            - '#cache restore build-pdf-$SEMAPHORE_WORKFLOW_ID'
+            - gs -sDEVICE=pdfwrite -dPrinted=false -dNOPAUSE -dBATCH -dSAFER -dFirstPage=2 -dLastPage=6 -sOutputFile=a-complete-guide-to-making-your-slow-tests-fast-6pages.pdf uploads/a-complete-guide-to-making-your-slow-tests-fast.pdf
+            - ./bin/cpdf covers/a-complete-guide-to-making-your-slow-tests-fast-sample.pdf a-complete-guide-to-making-your-slow-tests-fast-6pages.pdf uploads/a-complete-guide-to-making-your-slow-tests-fast-more.pdf -o uploads/a-complete-guide-to-making-your-slow-tests-fast-sample.pdf
+            - artifact push workflow --force uploads
 promotions:
   - name: Publish
     pipeline_file: publish.yml
