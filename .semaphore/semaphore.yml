@@ -23,6 +23,7 @@ blocks:
       jobs:
         - name: Guide sample
           commands:
+            - checkout
             - artifact pull workflow uploads
             - cache restore build-pdf-$SEMAPHORE_WORKFLOW_ID
             - cd uploads
