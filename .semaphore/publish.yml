@@ -15,6 +15,5 @@ blocks:
             - artifact pull workflow uploads
             - cd uploads
             - 'for f in *.pdf; do echo "put ''$f''" | sshpass -p "$FTP_PASSWORD" sftp -P $FTP_PORT -o StrictHostKeyChecking=no $FTP_USER@$FTP_HOST:/wp-content/uploads/pdf-downloads; done'
-            - '#cache restore build-pdf-$SEMAPHORE_WORKFLOW_ID'
-            - '#cd build/pdf'
-            - '#for f in *.pdf; do echo "put ''$f''" | sshpass -p "$FTP_PASSWORD" sftp -P $FTP_PORT -o StrictHostKeyChecking=no $FTP_USER@$FTP_HOST:/wp-content/uploads/pdf-downloads; done'
+            - 'echo "put a-complete-guide-to-making-your-slow-tests-fast-sample.pdf" | sshpass -p "$FTP_PASSWORD" sftp -P $FTP_PORT -o StrictHostKeyChecking=no $FTP_USER@$FTP_HOST:/wp-content/uploads/2022/04/'
+            - 'echo "put a-complete-guide-to-making-your-slow-tests-fast.pdf" | sshpass -p "$FTP_PASSWORD" sftp -P $FTP_PORT -o StrictHostKeyChecking=no $FTP_USER@$FTP_HOST:/wp-content/uploads/2022/04/'
