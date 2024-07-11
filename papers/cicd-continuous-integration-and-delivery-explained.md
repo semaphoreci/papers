@@ -149,7 +149,7 @@ When you’re ready to set up a CI/CD process for your project, [sign up for a f
 
 \newpage
 
-© __BUILD_YEAR__ Rendered Text. All rights reserved.
+© __BUILD_YEAR__ Semaphore Technologies doo. All rights reserved.
 
 This work is licensed under Creative Commmons
 Attribution-NonCommercial-NoDerivatives 4.0 International.

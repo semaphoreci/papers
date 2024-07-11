@@ -852,7 +852,7 @@ Also, don’t miss these CI/CD tutorials and docs:
 If you have any questions and comments, feel free to leave them in the section below. Also, feel free to share this tutorial with anyone you think might benefit from it.
 \newpage
 
-© __BUILD_YEAR__ Rendered Text. All rights reserved.
+© __BUILD_YEAR__ Semaphore Technologies doo. All rights reserved.
 
 This work is licensed under Creative Commmons
 Attribution-NonCommercial-NoDerivatives 4.0 International.
