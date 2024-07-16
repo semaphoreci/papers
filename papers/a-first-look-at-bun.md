@@ -280,7 +280,7 @@ Will Bun replace Node? It’s too early to say. When Deno came out, it certainly
 
 \newpage
 
-© __BUILD_YEAR__ Rendered Text. All rights reserved.
+© __BUILD_YEAR__ Semaphore Technologies doo. All rights reserved.
 
 This work is licensed under Creative Commmons
 Attribution-NonCommercial-NoDerivatives 4.0 International.

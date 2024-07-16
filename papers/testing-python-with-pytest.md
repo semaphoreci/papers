@@ -382,7 +382,7 @@ Please reach out with any questions or feedback you may have in the comments sec
 -   [How to Test Jupyter Notebooks with Pytest and Nbmake](https://semaphoreci.com/blog/test-jupyter-notebooks-with-pytest-and-nbmake)
 \newpage
 
-© __BUILD_YEAR__ Rendered Text. All rights reserved.
+© __BUILD_YEAR__ Semaphore Technologies doo. All rights reserved.
 
 This work is licensed under Creative Commmons
 Attribution-NonCommercial-NoDerivatives 4.0 International.

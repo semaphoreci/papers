@@ -849,7 +849,7 @@ You should now be ready to use Docker to simplify the deployment of  your next G
 
 \newpage
 
-© __BUILD_YEAR__ Rendered Text. All rights reserved.
+© __BUILD_YEAR__ Semaphore Technologies doo. All rights reserved.
 
 This work is licensed under Creative Commmons
 Attribution-NonCommercial-NoDerivatives 4.0 International.
